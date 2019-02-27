@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
     <section class="types-weakness">
       <div class="mother-types-weakness">
         <div class="div-types-weakness">
-          <h1>Tipos</h1>
+          <h2 class="subtitles">Tipos</h2>
           <button id="Normal" class="btn-types"> <i class="far fa-circle"></i> </button>
           <button id="Fire" class="btn-types"> <i class="fas fa-fire-alt"></i></button>
           <button id="Water" class="btn-types">  <i class="fas fa-tint"></i></button>
@@ -39,7 +40,7 @@
           <button id="Fairy" class="btn-types"> <i class="fas fa-star"></i></button>
         </div>
         <div class="div-types-weakness">
-          <h1>Fraquezas</h1>
+          <h2 class="subtitles">Fraquezas</h2>
           <button id="NormalW"> <i class="far fa-circle"></i> </button>
           <button id="FireW"> <i class="fas fa-fire-alt"></i></button>
           <button id="WaterW">  <i class="fas fa-tint"></i></button>
@@ -64,7 +65,7 @@
     <section class="height-weigth">
       <div class="mother-height-weigth">
         <div class="div-mother-height">
-          <h1>Altura</h1>
+          <h2 class="subtitles">Altura</h2>
           <div class="height-small">
             <button> <i class="fas fa-arrow-up"></i> </button>
           </div>
@@ -76,7 +77,7 @@
           </div>
         </div>
         <div class="div-mother-weigth">
-          <h1>Peso</h1>
+          <h2 class="subtitles">Peso</h2>
           <div class="weigth-small">
             <button><i class="fas fa-weight-hanging"></i></button>
           </div>
@@ -100,7 +101,7 @@
           <option>151-1</option>
         </select>
       </div>
-      <p>Lista de Pokémons</p>
+      <h2 class="subtitles">Lista de Pokémons</h2>
       <div class="list-poke" id="list-poke">
       </div>
       <div class="list-poketwo" id="list-poketwo">
@@ -108,6 +109,26 @@
     </section>
     <section id="sec-modal" class="sec-modal">
       <section id="modal-content" class="modal-content">
+        <h1 class="title-name">Pokemon Name</h1>
+        <div class="pic-description">
+            <figure class="poke-img"></figure>
+            <article class="poke-description">
+                N° 000
+                Altura: 00.00
+                Peso: 00.00
+                Candy “pokemon”
+            </article>
+        </div>
+        <div class="types-weak">
+          <div class="types">
+            <h2 class="subtitles">Tipos</h2>
+          </div>
+          <div class="weak">
+            <h2 class="subtitles">Fraquezas</h2>
+          </div>
+        </div>
+        <h2 class="subtitles">Evoluções</h2>
+        <div class="sec-evol"></div>
       </section>
     </section>
     <div id="root"></div>
