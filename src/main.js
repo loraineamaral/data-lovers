@@ -7,7 +7,7 @@ function getPokemons() {
   return POKEMON["pokemon"];
 }
 
-console.log("Lista de Pokemons: ", getPokemons())
+//console.log("Lista de Pokemons: ", getPokemons())
 
 function showPokemons() {
   let pokemonDiv = document.getElementById("list-poke");
@@ -23,7 +23,7 @@ function showPokemons() {
 `).join("")}
 `
 }
-
+/*
 let btnType = document.getElementsByClassName("btn-types")
 
 for (button of btnType) {
@@ -35,9 +35,11 @@ for (button of btnType) {
   });
 }
 
+
 function filterPoke(btnId) {
+  
   POKEMON["pokemon"].filter((elem) => {
-    elem.type.filter((ele) => {
+    elem.type.filter((ele) => { 
       if (btnId === ele) {
         let pokemonDivFil = document.getElementById("list-poketwo");
         pokemonDivFil.innerHTML =
@@ -57,3 +59,6 @@ function filterPoke(btnId) {
 
 
 }
+
+Array.filter(funcao)
+*/
