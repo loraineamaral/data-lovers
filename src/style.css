@@ -1,0 +1,44 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.black-bar{
+  background-color: black;
+  height: 9vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image{
+  height: 30vh;
+}
+
+.filter-buttons{
+  display: flex;
+  flex-wrap: nowrap; 
+  background-color: lightblue;
+  
+}
+ .types-weakness{
+  width: 50%;
+ 
+}
+.height-weigth{
+  width: 50%;
+  
+} 
+.list-poke{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.pokemon-unit{
+  border: 1px solid black;
+  width: 20%;  
+}
+.order-menu{
+  align-self: 
+}
