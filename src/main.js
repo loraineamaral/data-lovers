@@ -7,7 +7,7 @@ function getPokemons() {
   return POKEMON["pokemon"];
 }
 
-console.log("Lista de Pokemons: ", getPokemons())
+// console.log("Lista de Pokemons: ", getPokemons())
 
 function showPokemons() {
   let pokemonDiv = document.getElementById("list-poke");
@@ -28,6 +28,7 @@ let btnType = document.getElementsByClassName("btn-types")
 
 for (button of btnType){
   let btnId = button.id;
+  console.log("BOTAO AIDI", btnId)
  
   button.addEventListener('click', ()=>{
     document.getElementById("list-poke").innerHTML="";  
@@ -36,13 +37,16 @@ for (button of btnType){
 }
 
 function filterPoke(btnId){
-console.log(btnId)
-POKEMON["pokemon"].filter((elem)=> {elem.type.filter((ele) => {
-
   
-  if (btnId === ele){
+  for (let i in POKEMON["pokemon"]){
+    let types = POKEMON["pokemon"][i]["type"];
 
-
+    for(j of types){
+      if (btnId === j){
+        console.log("JOTA", j)
+        console.log("botaoIDDD", btnId)
+       
+      
 let pokemonDivFil = document.getElementById("list-poketwo");
 pokemonDivFil.innerHTML = 
    `
@@ -54,9 +58,7 @@ pokemonDivFil.innerHTML =
       </div> 
     </div>
 `
+      }}
 }
-  
-})} )
+}  
 
-
-}
