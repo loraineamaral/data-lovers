@@ -26,26 +26,22 @@ function showPokemons() {
 
 let btnType = document.getElementsByClassName("btn-types")
 
-for (button of btnType){
+for (button of btnType) {
   let btnId = button.id;
- 
-  button.addEventListener('click', ()=>{
-    document.getElementById("list-poke").innerHTML="";  
+
+  button.addEventListener('click', () => {
+    document.getElementById("list-poke").innerHTML = "";
     filterPoke(btnId);
-  } );
+  });
 }
 
-function filterPoke(btnId){
-console.log(btnId)
-POKEMON["pokemon"].filter((elem)=> {elem.type.filter((ele) => {
-
-  
-  if (btnId === ele){
-
-
-let pokemonDivFil = document.getElementById("list-poketwo");
-pokemonDivFil.innerHTML = 
-   `
+function filterPoke(btnId) {
+  POKEMON["pokemon"].filter((elem) => {
+    elem.type.filter((ele) => {
+      if (btnId === ele) {
+        let pokemonDivFil = document.getElementById("list-poketwo");
+        pokemonDivFil.innerHTML =
+          `
     <div class="pokemon-unit">
       <img src="${elem.img}" class="poke-img"/>
       <div class= "poke-namenum">
@@ -54,9 +50,10 @@ pokemonDivFil.innerHTML =
       </div> 
     </div>
 `
-}
-  
-})} )
+      }
+
+    })
+  })
 
 
 }
