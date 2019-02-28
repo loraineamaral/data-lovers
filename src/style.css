@@ -12,7 +12,7 @@ body{
 }
 
 .logo-image{
-  height: 30vh;
+  height: 80%;
 }
 
 .filter-buttons{
@@ -38,6 +38,7 @@ body{
 .pokemon-unit{
   border: 1px solid black;
   width: 20%;  
+  margin: 10px;
 }
 .order-menu{
   align-self: 
