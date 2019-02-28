@@ -39,6 +39,7 @@ for (button of btnType){
 function filterPoke(btnId){
   
   for (let i in POKEMON["pokemon"]){
+    let pokeObj = POKEMON["pokemon"][i];
     let types = POKEMON["pokemon"][i]["type"];
 
     for(j of types){
@@ -47,18 +48,18 @@ function filterPoke(btnId){
         console.log("botaoIDDD", btnId)
        
       
-let pokemonDivFil = document.getElementById("list-poketwo");
-pokemonDivFil.innerHTML = 
-   `
+let pokemonDivFil = document.getElementById("list-poke");
+pokemonDivFil.innerHTML +=  `
     <div class="pokemon-unit">
-      <img src="${elem.img}" class="poke-img"/>
+      <img src="${pokeObj["img"]}" class="poke-img"/>
       <div class= "poke-namenum">
-        <p class="poke-num"> Nº ${elem["num"]}</p>
-        <h3 class="poke-name">${elem["name"]}</h3>
+        <p class="poke-num"> Nº ${pokeObj["num"]}</p>
+        <h3 class="poke-name">${pokeObj["name"]}</h3>
       </div> 
     </div>
 `
-      }}
-}
+      }
+    }
+  }
 }  
 
