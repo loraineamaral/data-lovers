@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet"> 
+  </head>
+
 
 <body>
   <header class="black-bar">
@@ -18,7 +20,7 @@
     <section class="types-weakness">
       <div class="mother-types-weakness">
         <div class="div-types-weakness">
-          <h1>Tipos</h1>
+          <h1 class="text-style">Tipos</h1>
           <button id="Normal" class="btn-types"> <i class="far fa-circle"></i> </button>
           <button id="Fire" class="btn-types"> <i class="fas fa-fire-alt"></i></button>
           <button id="Water" class="btn-types">  <i class="fas fa-tint"></i></button>
@@ -39,7 +41,7 @@
           <button id="Fairy" class="btn-types"> <i class="fas fa-star"></i></button>
         </div>
         <div class="div-types-weakness">
-          <h1>Fraquezas</h1>
+          <h1 class="text-style">Fraquezas</h1>
           <button id="NormalW"> <i class="far fa-circle"></i> </button>
           <button id="FireW"> <i class="fas fa-fire-alt"></i></button>
           <button id="WaterW">  <i class="fas fa-tint"></i></button>
@@ -64,42 +66,35 @@
     <section class="height-weigth">
       <div class="mother-height-weigth">
         <div class="div-mother-height">
-          <h1>Altura</h1>
-          <div class="height-small">
+          <h1 class="text-style">Altura</h1>
+          <div class="height">
             <button> <i class="fas fa-arrow-up"></i> </button>
-          </div>
-          <div class="height-medium">
             <button><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i> </button>
-          </div>
-          <div class="height-high">
             <button> <i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i></button>
           </div>
         </div>
         <div class="div-mother-weigth">
-          <h1>Peso</h1>
-          <div class="weigth-small">
+          <h1 class="text-style">Peso</h1>
+          <div class="weigth">
             <button><i class="fas fa-weight-hanging"></i></button>
-          </div>
-          <div class="weigth-medium">
             <button><i class="fas fa-weigth-hanging"></i><i class="fas fa-weight-hanging"></i></button>
-          </div>
-          <div class="weigth-high">
             <button><i class="fas fa-weight-hanging"></i><i class="fas fa-weight-hanging"></i><i class="fas fa-weight-hanging"></i></button>
           </div>
         </div>
       </div>
     </section>
   </section>
+  <div class="order-menu">
+    <p class="text-style">Ordenar:</p>
+    <select id="ordering-poke" name="order-names" >
+      <option class="text-style">Escolha uma Opção</option>
+      <option class="text-style" id="orderalphab">A-Z</option>
+      <option class="text-style" id="reversealphab">Z-A</option>
+    </select>
+  </div>
     <section class="show-poke">
-      <div class="order-menu">
-        <p>Ordenar:</p>
-        <select id="sortPoke" name="order-names">
-          <option value="">Escolha uma Opção</option>
-          <option value="orderalphab">A-Z</option>
-          <option value="reversealphab">Z-A</option>
-        </select>
-      </div>
-      <p>Lista de Pokémons</p>
+     
+      <p class="text-style">Lista de Pokémons</p>
       <div class="list-poke" id="list-poke">
       </div>
       <div class="list-poketwo" id="list-poketwo">

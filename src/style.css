@@ -16,30 +16,71 @@ body{
 }
 
 .filter-buttons{
-  display: flex;
-  flex-wrap: nowrap; 
+  display: flex; 
   background-color: lightblue;
-  
-}
+  padding: 25px;
+  }
+
  .types-weakness{
-  width: 50%;
- 
+  width: 70%;
+   
 }
+
+i{
+  padding: 8px 0px 8px 0px;
+  font-size: 18px;
+}
+
 .height-weigth{
-  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 30%;
+}
+.poke-shadow{
+  background-color: grey;
+  width: 50px;
+  height: 10px;
+  border-radius: 50px;
   
-} 
+}
+
 .list-poke{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: 80px;
 }
 .pokemon-unit{
-  border: 1px solid black;
-  width: 20%;  
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border-radius: 5%; 
+  padding: 20px 50px;;
+  margin: 30px;
+}
+
+.poke-num{
+  font-family: 'Signika';
+  font-size: 13px;
+  
+}
+.poke-name{
+  font-family: 'Signika';
+   
 }
 .order-menu{
-  align-self: 
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  font-family: 'Signika';
+}
+.select-menu{
+  font-family: 'Signika';
+  font-size: 30px;
+}
+.text-style{
+  font-family: 'Signika';
+  font-size: 25px;
 }
