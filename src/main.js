@@ -12,7 +12,7 @@ function getPokemons() {
 function showPokemons(getPoke) {
   let pokemonDiv = document.getElementById("list-poke");
   pokemonDiv.innerHTML =
-  `
+    `
     ${getPoke.map((pokelist) =>
       `
       <div data-num=${pokelist.num} class="pokemon-unit">
@@ -32,7 +32,7 @@ function filterPoke(btnId) {
       if (btnId === ele) {
         let pokemonDivFil = document.getElementById("list-poke")
         pokemonDivFil.innerHTML +=
-        `
+          `
     <div} class="pokemon-unit">
       <img data-num=${elem.num} src="${elem.img}" class="poke-img"/>
       <div data-num=${elem.num} class= "poke-namenum">
@@ -64,9 +64,9 @@ function showModal(classPokes) {
 
       let dataNum = event.target.getAttribute("data-num")
       POKEMON["pokemon"].filter((elem) => {
-          if (dataNum === elem.num) {
-            document.querySelector('#sec-modal').style.display = "block";
-            document.querySelector('#sec-modal').innerHTML =
+        if (dataNum === elem.num) {
+          document.querySelector('#sec-modal').style.display = "block";
+          document.querySelector('#sec-modal').innerHTML =
             `
             <section id="modal-content" class="modal-content">
             <h1 class="title-name">${elem.name}</h1>
@@ -85,17 +85,16 @@ function showModal(classPokes) {
             <div class="types-weak">
               <div class="div-types">
                 <h2 class="subtitles">Tipos</h2>
+                <div class="div-types">
                 ${elem.type.filter((elem) => {
-                  for(btn of document.querySelectorAll('.btn-types')){
-                    if (elem === btn.id){
-                      `
-                      <div class="div-types">
-                      ${console.log(btn.categ)}
-                      </div>
-                      `
-                    }
-                  }
-                })}
+              for (btn of document.querySelectorAll('.btn-types')) {
+                if (elem === btn.id) {
+                  document.querySelector('.div-types').innerHTML= btn
+                }
+              }
+            }
+            )}
+                </div>
               </div>
               <div class="weak">
                 <h2 class="subtitles">Fraquezas</h2>
@@ -105,8 +104,8 @@ function showModal(classPokes) {
             <div class="sec-evol"></div>
           </section>
           `
-          }
-        })
+        }
       })
-    }
+    })
   }
+}
