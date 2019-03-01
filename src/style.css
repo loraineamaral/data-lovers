@@ -42,3 +42,28 @@ body{
 .order-menu{
   align-self: 
 }
+.sec-modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100vw;
+  width: 100vw;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal-content{
+  background-color: white;
+  margin: 20% auto;
+  padding: 20px;
+  width: 7x0%;
+}
+.title-name{
+  font-family: 'Signika', sans-serif;
+  font-size: 40px;
+}
+.subtitles{
+  font-family: 'Signika', sans-serif;
+  font-size: 20px;
+}
