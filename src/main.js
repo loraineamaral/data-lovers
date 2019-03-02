@@ -65,47 +65,48 @@ function showModal(classPokes) {
       let dataNum = event.target.getAttribute("data-num")
       POKEMON["pokemon"].filter((elem) => {
         if (dataNum === elem.num) {
+
           document.querySelector('#sec-modal').style.display = "block";
-          document.querySelector('#sec-modal').innerHTML =
-            `
-            <section id="modal-content" class="modal-content">
-            <h1 class="title-name">${elem.name}</h1>
-            <div class="pic-description">
-                <figure id="photo-poke" class="poke-img">
-                <img src="${elem.img}"></figure>
-                <article class="poke-description">
-                  <ul>
-                    <li>N° ${elem.num}</li>
-                    <li>Altura: ${elem.height}</li>
-                    <li>Peso: ${elem.weight}</li>
-                    <li>${elem.candy}</li>
-                  </ul>
-                </article>
-            </div>
-            <div class="types-weak">
-              <div class="div-types">
-                <h2 class="subtitles">Tipos</h2>
-                <div class="div-types">
-                ${elem.type.filter((elem) => {
-              for (btn of document.querySelectorAll('.btn-types')) {
+          document.querySelector('.title-name').innerHTML = elem.name;
+          document.querySelector('#photo-poke').innerHTML = `
+          <img src="${elem.img}"/>
+          `
+          document.querySelector('.poke-description').innerHTML = `
+          <ul>
+          <li>N° ${elem.num}</li>
+          <li>Altura: ${elem.height}</li>
+          <li>Peso: ${elem.weight}</li>
+          <li>${elem.candy}</li>
+          </ul>
+          `
+          
+            elem.weaknesses.filter((elem) => {
+              for (let btn of document.querySelectorAll('.btn-types')) {
                 if (elem === btn.id) {
-                  document.querySelector('.div-types').innerHTML= btn
+                  document.querySelector('.div-weak').innerHTML += btn.outerHTML
                 }
               }
             }
-            )}
-                </div>
-              </div>
-              <div class="weak">
-                <h2 class="subtitles">Fraquezas</h2>
-              </div>
-            </div>
-            <h2 class="subtitles">Evoluções</h2>
-            <div class="sec-evol"></div>
-          </section>
-          `
-        }
+            )
+          
+            elem.type.filter((elem) => {
+              for (let btn of document.querySelectorAll('.btn-types')) {
+                if (elem === btn.id) {
+                  document.querySelector('.div-types').innerHTML += `${btn.outerHTML}`;
+                }
+              }
+            }
+            )
+            
+          }
+        })
       })
-    })
+    }
+  }
+  function getButton(divB){
+    for (let btn of document.querySelectorAll('.btn-types')) {
+      if (elem === btn.id) {
+        document.querySelector(divB).innerHTML += `${btn.outerHTML}`;
   }
 }
+  }
