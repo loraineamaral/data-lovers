@@ -50,11 +50,10 @@ let btnType = document.getElementsByClassName('btn-types')
 
 for (button of btnType) {
   let btnId = button.id;
-
   button.addEventListener('click', () => {
     document.getElementById("list-poke").innerHTML = "";
     filterPoke(btnId);
-  });
+  })
 }
 
 function showModal(classPokes) {
@@ -65,7 +64,6 @@ function showModal(classPokes) {
       let dataNum = event.target.getAttribute("data-num")
       POKEMON["pokemon"].filter((elem) => {
         if (dataNum === elem.num) {
-
           document.querySelector('#sec-modal').style.display = "block";
           document.querySelector('.title-name').innerHTML = elem.name;
           document.querySelector('#photo-poke').innerHTML = `
@@ -79,34 +77,25 @@ function showModal(classPokes) {
           <li>${elem.candy}</li>
           </ul>
           `
-          
-            elem.weaknesses.filter((elem) => {
-              for (let btn of document.querySelectorAll('.btn-types')) {
-                if (elem === btn.id) {
-                  document.querySelector('.div-weak').innerHTML += btn.outerHTML
-                }
+
+          elem.weaknesses.filter((elem) => {
+            for (let btn of document.querySelectorAll('.btn-types')) {
+              if (elem === btn.id) {
+                document.querySelector('.div-weak').innerHTML += btn.outerHTML
               }
             }
-            )
-          
-            elem.type.filter((elem) => {
-              for (let btn of document.querySelectorAll('.btn-types')) {
-                if (elem === btn.id) {
-                  document.querySelector('.div-types').innerHTML += `${btn.outerHTML}`;
-                }
+          })
+
+          elem.type.filter((elem) => {
+            for (let btn of document.querySelectorAll('.btn-types')) {
+              if (elem === btn.id) {
+                document.querySelector('.div-types').innerHTML += `${btn.outerHTML}`;
               }
             }
-            )
-            
-          }
-        })
+          })
+
+        }
       })
-    }
-  }
-  function getButton(divB){
-    for (let btn of document.querySelectorAll('.btn-types')) {
-      if (elem === btn.id) {
-        document.querySelector(divB).innerHTML += `${btn.outerHTML}`;
+    })
   }
 }
-  }
