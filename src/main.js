@@ -27,7 +27,7 @@ function showPokemons(getPoke) {
 }
 
 function filterPoke(btnId) {
-  POKEMON["pokemon"].filter((elem) => {
+  POKEMON.pokemon.filter((elem) => {
     elem.type.filter((ele) => {
       if (btnId === ele) {
         let pokemonDivFil = document.getElementById("list-poke")
@@ -78,24 +78,59 @@ function showModal(classPokes) {
           </ul>
           `
 
-          elem.weaknesses.filter((elem) => {
+          elem.weaknesses.filter((typ) => {
             for (let btn of document.querySelectorAll('.btn-types')) {
-              if (elem === btn.id) {
+              if (typ === btn.id) {
                 document.querySelector('.div-weak').innerHTML += btn.outerHTML
               }
             }
           })
 
-          elem.type.filter((elem) => {
+          elem.type.filter((typ) => {
             for (let btn of document.querySelectorAll('.btn-types')) {
-              if (elem === btn.id) {
+              if (typ === btn.id) {
                 document.querySelector('.div-types').innerHTML += `${btn.outerHTML}`;
               }
             }
           })
 
+          elem.prev_evolution.filter((evol) => {
+            POKEMON["pokemon"].filter((elem) => {
+              if (evol.num === elem.num) {
+                document.querySelector('.sec-evol').innerHTML +=
+                `
+                <div data-num=${elem.num} class="pokemon-unit">
+                  <img data-num=${elem.num} class="poke-img" src="${elem.num}"/>
+                  <div data-num=${elem.num} class= "poke-namenum">
+                    <p data-num=${elem.num} class="poke-num"> Nº ${elem.num}</p>
+                    <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+                  </div> 
+                </div>
+          `
+              }
+            })
+          })
+
+          elem.next_evolution.filter((evol) => {
+            POKEMON["pokemon"].filter((elem) => {
+              if (evol.num === elem.num) {
+                document.querySelector('.sec-evol').innerHTML +=
+                `
+                <div data-num=${elem.num} class="pokemon-unit">
+                  <img data-num=${elem.num} class="poke-img" src="${elem.num}"/>
+                  <div data-num=${elem.num} class= "poke-namenum">
+                    <p data-num=${elem.num} class="poke-num"> Nº ${elem.num}</p>
+                    <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+                  </div> 
+                </div>
+          `
+              }
+            })
+          })
+
+          }
         }
-      })
-    })
-  }
+      )
+    }
+    )}
 }
