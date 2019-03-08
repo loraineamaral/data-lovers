@@ -2,7 +2,15 @@ body{
   margin: 0;
   padding: 0;
 }
-
+ul{
+  list-style: none;
+  font-family: 'Signika', sans-serif;
+  font-size: 20px;
+  text-align: left;
+}
+img {
+  width: 70%;
+}
 .black-bar{
   background-color: black;
   height: 100px;
@@ -16,7 +24,6 @@ body{
 .logo-image{
   height: 80%;
 }
-
 .filter-buttons{
   display: flex; 
   background-color: lightblue;
@@ -39,6 +46,45 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  z-index: 2;
+}
+.pokemon-unit{
+  border: 1px solid black;
+  width: 200px;
+}
+.poke-name{
+  font-family: 'Signika', sans-serif;
+  font-size: 20px;
+}
+.sec-modal{
+  display: none;
+}
+.div-modal{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100vw;
+  width: 100vw;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal-content{
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  width: 80%;
+}
+.title-name{
+  font-family: 'Signika', sans-serif;
+  font-size: 50px;
+  margin: 10px 20%;
+  text-align: left;
+  background-color: #e5e4d0;
+}
+.pokemon-unit{
   background-color: #e5e4d0;
 }
 .pokemon-unit{
@@ -111,4 +157,65 @@ body{
 .subtitles{
   font-family: 'Signika', sans-serif;
   font-size: 20px;
+}
+.pic-description{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#photo-poke{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: beige;
+  border-radius: 10px;
+  width: 300px;
+  height: inherit;
+  margin: 10px;
+  padding: 10px 0 0 0;
+  image-resolution: 300px;
+}
+.description{
+  width: 300px;
+}
+.poke-description{
+  background-color: beige;
+  border-radius: 10px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px 0 10px 0;
+}
+.types-weak{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: left;
+}
+.div-types{
+  background-color: beige;
+  border-radius: 10px;
+  width: 260px;
+  margin: 10px;
+  padding: 10px 0 10px 40px;
+}
+.div-weak{
+  background-color: beige;
+  border-radius: 10px;
+  width: 260px;
+  margin: 10px;
+  padding: 10px 0 10px 40px;
+  max-width: 300px;
+}
+.subtitlesM{
+  font-family: 'Signika', sans-serif;
+  font-size: 30px;
+  margin: 0;
+}
+.sec-evol{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
