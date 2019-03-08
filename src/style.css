@@ -5,11 +5,13 @@ body{
 
 .black-bar{
   background-color: black;
-  height: 9vw;
+  height: 100px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  position: fixed;
+ }
 
 .logo-image{
   height: 80%;
@@ -18,17 +20,11 @@ body{
 .filter-buttons{
   display: flex; 
   background-color: lightblue;
-  padding: 25px;
+  padding: 120px 35px 45px 35px;
   }
 
  .types-weakness{
-  width: 70%;
-   
-}
-
-i{
-  padding: 8px 0px 8px 0px;
-  font-size: 18px;
+  width: 70%;   
 }
 
 .height-weigth{
@@ -37,20 +33,13 @@ i{
   flex-direction: row;
   width: 30%;
 }
-.poke-shadow{
-  background-color: grey;
-  width: 50px;
-  height: 10px;
-  border-radius: 50px;
-  
-}
 
 .list-poke{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 80px;
+  background-color: #e5e4d0;
 }
 .pokemon-unit{
   display: flex;
@@ -73,14 +62,28 @@ i{
 .order-menu{
   display: flex;
   justify-content: flex-end;
-  margin-right: 30px;
-  font-family: 'Signika';
+  padding: 30px 80px 0 0;
+  background-color: #e5e4d0;
 }
-.select-menu{
+.menu-select{
   font-family: 'Signika';
-  font-size: 30px;
+  font-size: 15px;
+  border: 1px solid;
+  height: 40px;
+  border-radius: 5%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../assets/images/arrowdown.png.png) no-repeat 96% 0;
+  overflow: hidden;
+  width: 200px;
+  height: 30px;
 }
 .text-style{
   font-family: 'Signika';
-  font-size: 25px;
+  font-size: 20px;
+}
+.show-poke{
+  background-color: #e5e4d0;
 }
