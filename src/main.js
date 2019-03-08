@@ -9,10 +9,6 @@ function clearScreen(){
 document.getElementById("list-poke").innerHTML = ""
 }
 
-function clearScreen(){
-document.getElementById("list-poke").innerHTML = ""
-}
-
 function getPokemons() {
   return POKEMON["pokemon"];
 }
@@ -151,7 +147,6 @@ button.addEventListener('click', () => {
   document.getElementById("list-poke").innerHTML = "";
   filterPoke(btnId);
 });
-}
 
 function filterPoke(btnId) {
 
