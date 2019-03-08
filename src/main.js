@@ -16,7 +16,7 @@ function showPokemons(getPoke) {
     ${getPoke.map((pokelist) =>
       `
       <div data-num=${pokelist.num} class="pokemon-unit">
-        <img data-num=${pokelist.num} class="poke-img" src="${pokelist.num}"/>
+        <img data-num=${pokelist.num} class="poke-img" src="${pokelist.img}"/>
         <div data-num=${pokelist.num} class= "poke-namenum">
           <p data-num=${pokelist.num} class="poke-num"> Nº ${pokelist.num}</p>
           <h3 data-num=${pokelist.num} class="poke-name">${pokelist.name}</h3>
@@ -94,43 +94,46 @@ function showModal(classPokes) {
             }
           })
 
-          elem.prev_evolution.filter((evol) => {
-            POKEMON["pokemon"].filter((elem) => {
-              if (evol.num === elem.num) {
-                document.querySelector('.sec-evol').innerHTML +=
-                `
-                <div data-num=${elem.num} class="pokemon-unit">
-                  <img data-num=${elem.num} class="poke-img" src="${elem.num}"/>
-                  <div data-num=${elem.num} class= "poke-namenum">
-                    <p data-num=${elem.num} class="poke-num"> Nº ${elem.num}</p>
-                    <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
-                  </div> 
-                </div>
-          `
-              }
+          if (elem.hasOwnProperty('prev_evolution') === true) {
+            elem.prev_evolution.filter((evol) => {
+              POKEMON["pokemon"].filter((elem) => {
+                if (evol.num === elem.num) {
+                  document.querySelector('.sec-evol').innerHTML +=
+                    `
+                  <div data-num=${elem.num} class="pokemon-unit">
+                    <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+                    <div data-num=${elem.num} class= "poke-namenum">
+                      <p data-num=${elem.num} class="poke-num"> Nº ${elem.num}</p>
+                      <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+                    </div> 
+                  </div>
+            `
+                }
+              })
             })
-          })
-
-          elem.next_evolution.filter((evol) => {
-            POKEMON["pokemon"].filter((elem) => {
-              if (evol.num === elem.num) {
-                document.querySelector('.sec-evol').innerHTML +=
-                `
-                <div data-num=${elem.num} class="pokemon-unit">
-                  <img data-num=${elem.num} class="poke-img" src="${elem.num}"/>
-                  <div data-num=${elem.num} class= "poke-namenum">
-                    <p data-num=${elem.num} class="poke-num"> Nº ${elem.num}</p>
-                    <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
-                  </div> 
-                </div>
-          `
-              }
+          } if (elem.hasOwnProperty('next_evolution') === true) {
+            elem.next_evolution.filter((evol) => {
+              POKEMON["pokemon"].filter((elem) => {
+                if (evol.num === elem.num) {
+                  document.querySelector('.sec-evol').innerHTML +=
+                    `
+                  <div data-num=${elem.num} class="pokemon-unit">
+                    <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+                    <div data-num=${elem.num} class= "poke-namenum">
+                      <p data-num=${elem.num} class="poke-num"> Nº ${elem.num}</p>
+                      <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+                    </div> 
+                  </div>
+            `
+                }
+              })
             })
-          })
-
           }
+
         }
+      }
       )
     }
-    )}
+    )
+  }
 }

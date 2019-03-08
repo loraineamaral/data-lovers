@@ -2,7 +2,6 @@ body{
   margin: 0;
   padding: 0;
 }
-
 .black-bar{
   background-color: black;
   height: 9vw;
@@ -10,40 +9,44 @@ body{
   justify-content: center;
   align-items: center;
 }
-
 .logo-image{
   height: 30vh;
 }
-
 .filter-buttons{
   display: flex;
   flex-wrap: nowrap; 
   background-color: lightblue;
-  
 }
  .types-weakness{
   width: 50%;
- 
 }
 .height-weigth{
   width: 50%;
-  
-} 
+}
 .list-poke{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  z-index: 2;
 }
 .pokemon-unit{
   border: 1px solid black;
   width: 20%;  
+}
+.poke-name{
+  font-family: 'Signika', sans-serif;
+  font-size: 20px;
 }
 .order-menu{
   align-self: 
 }
 .sec-modal{
   display: none;
+}
+.div-modal{
+  display: flex;
+  justify-content: center;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -54,10 +57,10 @@ body{
   background-color: rgba(0,0,0,0.5);
 }
 .modal-content{
+  text-align: center;
   background-color: white;
-  margin: 20% auto;
   padding: 20px;
-  width: 7x0%;
+  width: 80%;
 }
 .title-name{
   font-family: 'Signika', sans-serif;
@@ -66,4 +69,22 @@ body{
 .subtitles{
   font-family: 'Signika', sans-serif;
   font-size: 20px;
+}
+.pic-description{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.types-weak{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.sec-evol{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
