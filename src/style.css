@@ -18,7 +18,9 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  position: fixed;
+ }
+
 .logo-image{
   height: 80%;
 }
@@ -80,6 +82,9 @@ img {
   font-size: 50px;
   margin: 10px 20%;
   text-align: left;
+  background-color: #e5e4d0;
+}
+.pokemon-unit{
   background-color: #e5e4d0;
 }
 .pokemon-unit{

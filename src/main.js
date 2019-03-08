@@ -9,6 +9,10 @@ function clearScreen(){
 document.getElementById("list-poke").innerHTML = ""
 }
 
+function clearScreen(){
+document.getElementById("list-poke").innerHTML = ""
+}
+
 function getPokemons() {
   return POKEMON["pokemon"];
 }
@@ -22,6 +26,7 @@ function showPokemons(getPoke) {
       <div data-num=${pokelist.num} class="pokemon-unit">
         <img data-num=${pokelist.num} class="poke-img" src="${pokelist.img}"/>
         <div data-num=${pokelist.num} class= "poke-namenum">
+        <div class="poke-shadow"></div>
           <p data-num=${pokelist.num} class="poke-num"> Nº ${pokelist.num}</p>
           <h3 data-num=${pokelist.num} class="poke-name">${pokelist.name}</h3>
         </div> 
@@ -140,6 +145,12 @@ function showModal(classPokes) {
     }
     )
   }
+}
+
+button.addEventListener('click', () => {
+  document.getElementById("list-poke").innerHTML = "";
+  filterPoke(btnId);
+});
 }
 
 function filterPoke(btnId) {
