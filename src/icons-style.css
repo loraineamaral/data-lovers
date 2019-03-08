@@ -1,0 +1,136 @@
+.btn-types{
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  padding: 8px 0px 8px 0px;
+  font-size: 18px;
+}
+
+.btn-types:hover {
+  background-color: white;
+}
+button[data-btn="Normal"]{
+  background-color: white;
+}
+button[data-btn="Fire"]{
+  background-color: red;
+}
+button[data-btn="Water"]{
+  background-color: #54e5ca;
+}
+button[data-btn="Electric"]{
+  background-color: #fca002;
+}
+button[data-btn="Grass"]{
+  background-color: #01fc6a;
+}
+button[data-btn="Ice"]{
+  background-color: #336a8c;
+  color: white;
+}
+button[data-btn="Poison"]{
+  background-color: #680c7f;
+  color: white;
+}
+button[data-btn="Ground"]{
+  background-color: #664617;
+  color: white;
+}
+button[data-btn="Fighting"]{
+  background-color:#c11313;
+}
+button[data-btn="Flying"]{
+  background-color: #133ac6;
+}
+button[data-btn="Psychic"]{
+  background-color: #d154e5;
+}
+button[data-btn="Bug"]{
+  background-color: #b7e554;
+}
+button[data-btn="Rock"]{
+  background-color: #949989;
+}
+button[data-btn="Ghost"]{
+  background-color: #c8abcc;
+}
+button[data-btn="Dragon"]{
+  background-color: #f97b04;
+}
+button[data-btn="Dark"]{
+  background-color: #120e84;
+  color: white;
+}
+button[data-btn="Steel"]{
+  background-color: #8989a3;
+}
+button[data-btn="Fairy"]{
+  background-color: deeppink;
+}
+
+button[data-btn="NormalW"]{
+  background-color: white;
+}
+button[data-btn="FireW"]{
+  background-color: red;
+}
+button[data-btn="WaterW"]{
+  background-color: #54e5ca;
+}
+button[data-btn="ElectricW"]{
+  background-color: #fca002;
+}
+button[data-btn="GrassW"]{
+  background-color: #01fc6a;
+}
+button[data-btn="IceW"]{
+  background-color: #336a8c;
+  color: white;
+}
+button[data-btn="PoisonW"]{
+  background-color: #680c7f;
+  color: white;
+}
+button[data-btn="GroundW"]{
+  background-color: #664617;
+  color: white;
+}
+button[data-btn="FightingW"]{
+  background-color:#c11313;
+}
+button[data-btn="FlyingW"]{
+  background-color: #133ac6;
+}
+button[data-btn="PsychicW"]{
+  background-color: #d154e5;
+}
+button[data-btn="BugW"]{
+  background-color: #b7e554;
+}
+button[data-btn="RockW"]{
+  background-color: #949989;
+}
+button[data-btn="GhostW"]{
+  background-color: #c8abcc;
+}
+button[data-btn="DragonW"]{
+  background-color: #f97b04;
+}
+button[data-btn="DarkW"]{
+  background-color: #120e84;
+  color: white;
+}
+button[data-btn="SteelW"]{
+  background-color: #8989a3;
+}
+button[data-btn="FairyW"]{
+  background-color: deeppink;
+}
+.icon-h-w{
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  padding: 15px 10px 15px 10px;
+  font-size: 15px;
+  background-color: #ede971;
+}

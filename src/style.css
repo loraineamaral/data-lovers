@@ -5,42 +5,87 @@ body{
 
 .black-bar{
   background-color: black;
-  height: 9vw;
+  height: 100px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  position: fixed;
+ }
 
 .logo-image{
-  height: 30vh;
+  height: 80%;
 }
 
 .filter-buttons{
-  display: flex;
-  flex-wrap: nowrap; 
+  display: flex; 
   background-color: lightblue;
-  
-}
+  padding: 120px 35px 45px 35px;
+  }
+
  .types-weakness{
-  width: 50%;
- 
+  width: 70%;   
 }
+
 .height-weigth{
-  width: 50%;
-  
-} 
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 30%;
+}
+
 .list-poke{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background-color: #e5e4d0;
 }
 .pokemon-unit{
-  border: 1px solid black;
-  width: 20%;  
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border-radius: 5%; 
+  padding: 20px 50px;;
+  margin: 30px;
+}
+
+.poke-num{
+  font-family: 'Signika';
+  font-size: 13px;
+  
+}
+.poke-name{
+  font-family: 'Signika';
+   
 }
 .order-menu{
-  align-self: 
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 80px 0 0;
+  background-color: #e5e4d0;
+}
+.menu-select{
+  font-family: 'Signika';
+  font-size: 15px;
+  border: 1px solid;
+  height: 40px;
+  border-radius: 5%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../assets/images/arrowdown.png.png) no-repeat 96% 0;
+  overflow: hidden;
+  width: 200px;
+  height: 30px;
+}
+.text-style{
+  font-family: 'Signika';
+  font-size: 20px;
+}
+.show-poke{
+  background-color: #e5e4d0;
 }
 .sec-modal{
   display: none;
