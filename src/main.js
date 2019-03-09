@@ -41,7 +41,7 @@ for (button of btnType) {
 }
 
 function filterPokeType(btnId) {
-  
+
   POKEMON.pokemon.filter((elem) => {
     elem.type.filter((ele) => {
       if (btnId === ele) {
@@ -218,27 +218,123 @@ function sortPoke(ka) {
     }
   }
 }
-let candyArray = [];
-let sum = 0;
 
-// function candyCount() {
+var stats = document.getElementById("stats-btn")
+stats.addEventListener("click", candyCount)
+stats.addEventListener("click", getHeight)
+stats.addEventListener("click", getWeight)
+stats.addEventListener("click", getTypes)
+
+function getTypes(){
+  let typesArray = [];
+  let contNormal = 0;
+  let contFire = 0;
+  let contWater = 0;
+  let contElectric = 0;
+  let contGrass = 0;
+  let contIce = 0;
+  let contPoison = 0;
+  let contGround = 0;
+  let contFighting = 0;
+  let contFlying = 0;
+  let contPsychic = 0;
+  let contBug = 0;
+  let contRock = 0;
+  let contGhost = 0;
+  let contDragon = 0;
+  let contDark = 0;
+  let contSteel = 0;
+  let contFairy = 0;
   
   POKEMON.pokemon.filter((elem) => {
-    if (typeof elem.candy_count === "number"){
-      candyArray.push (elem.candy_count) 
-    }
+          typesArray.push(elem.type[0]) 
+          if (typeof elem.type[1] === "string") {
+            typesArray.push(elem.type[1])
+          }
+  })
+  typesArray.filter((elem) => {
+      if (elem === "Normal"){
+      contNormal += 1;
+      }if (elem === "Fire"){
+        contFire += 1;
+        }if (elem === "Water"){
+          contWater += 1;
+        }if (elem === "Electric"){
+            contElectric += 1;
+            }if (elem === "Grass"){
+              contGrass += 1;
+              }if (elem === "Ice"){
+                contIce += 1;
+                }if (elem === "Poison"){
+                  contPoison += 1;
+                  }if (elem === "Ground"){
+                    contGround += 1;
+                    }if (elem === "Fighting"){
+                      contFighting += 1;
+                      }if (elem === "Flying"){
+                        contFlying += 1;
+                        }if (elem === "Psychic"){
+                          contPsychic += 1;
+                          }if (elem === "Bug"){
+                            contBug += 1;
+                            }if (elem === "Rock"){
+                              contRock += 1;
+                              }if (elem === "Ghost"){
+                                contGhost += 1;
+                                }if (elem === "Dragon"){
+                                  contDragon += 1;
+                                  }if (elem === "Dark"){
+                                    contDark += 1;
+                                    }if (elem === "Steel"){
+                                      contSteel += 1;
+                                      }if (elem === "Fairy"){
+                                        contFairy += 1;
+                                        }
+              
     })
-    for (i of candyArray){
-      sum += i;
-      }
-      let average = sum/candyArray.length;
-      let max = Math.max.apply(null, candyArray );
-      let min = Math.min.apply(null, candyArray );
-        
-    console.log(candyArray)
-    console.log(sum)
-    console.log(average)
-    console.log(max)
-    console.log(min)
 
-// }
+}
+
+function getHeight() {
+  let heigthArray = [];
+  POKEMON.pokemon.filter((elem) => {
+    heigthArray.push(elem.height.replace(" m", ""))
+  })
+  let sumHeight = heigthArray.reduce((a, b) => parseFloat(a) + parseFloat(b));
+  let avgHeight = (sumHeight / heigthArray.length).toFixed(2);
+  let maxHeight = Math.max.apply(null, heigthArray);
+  let minHeight = Math.min.apply(null, heigthArray);
+
+  document.getElementById("height-stats").innerHTML = "Média: " + avgHeight + " Máximo: " + maxHeight + " Mínimo: " + minHeight;
+}
+
+function getWeight() {
+  let weightArray = [];
+  POKEMON.pokemon.filter((elem) => {
+    weightArray.push(elem.weight.replace(" kg", ""))
+  })
+  let sumWeight = weightArray.reduce((a, b) => parseFloat(a) + parseFloat(b));
+  let avgWeight = (sumWeight / weightArray.length).toFixed(2);
+  let maxWeight = Math.max.apply(null, weightArray);
+  let minWeight = Math.min.apply(null, weightArray);
+
+  document.getElementById("weight-stats").innerHTML = "Média: " + avgWeight + " Máximo: " + maxWeight + " Mínimo: " + minWeight;
+}
+
+function candyCount() {
+  clearScreen();
+  document.getElementById("filter-buttons").innerHTML = ""
+  document.getElementById("show-poke").innerHTML = ""
+  let candyArray = [];
+  POKEMON.pokemon.filter((elem) => {
+    if (typeof elem.candy_count === "number") {
+      candyArray.push(elem.candy_count)
+    }
+  })
+  let candySum = candyArray.reduce((a, b) => a + b);
+  let avgCandy = candySum / candyArray.length;
+  let maxCandy = Math.max.apply(null, candyArray);
+  let minCandy = Math.min.apply(null, candyArray);
+
+  document.getElementById("candy-stats").innerHTML = "Média: " + avgCandy + " Máximo: " + maxCandy + " Mínimo: " + minCandy;
+}
