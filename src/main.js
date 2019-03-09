@@ -5,8 +5,8 @@ window.onload = function () {
   showModal('.poke-namenum')
 }
 
-function clearScreen(){
-document.getElementById("list-poke").innerHTML = ""
+function clearScreen() {
+  document.getElementById("list-poke").innerHTML = ""
 }
 
 function getPokemons() {
@@ -31,7 +31,17 @@ function showPokemons(getPoke) {
 `
 }
 
-function filterPoke(btnId) {
+let btnType = document.getElementsByClassName('btn-types')
+for (button of btnType) {
+  let btnId = button.getAttribute("data-btn")
+  button.addEventListener('click', () => {
+    document.getElementById("list-poke").innerHTML = "";
+    filterPokeType(btnId);
+  })
+}
+
+function filterPokeType(btnId) {
+  
   POKEMON.pokemon.filter((elem) => {
     elem.type.filter((ele) => {
       if (btnId === ele) {
@@ -51,13 +61,33 @@ function filterPoke(btnId) {
   })
 }
 
-let btnType = document.getElementsByClassName('btn-types')
+let btnWeak = document.getElementsByClassName('btn-weaks')
 
-for (button of btnType) {
-  let btnId = button.id;
+for (button of btnWeak) {
+  let btnId = button.getAttribute("data-btn");
   button.addEventListener('click', () => {
     document.getElementById("list-poke").innerHTML = "";
-    filterPoke(btnId);
+    filterPokeWeak(btnId);
+  })
+}
+
+function filterPokeWeak(btnId) {
+  POKEMON.pokemon.filter((elem) => {
+    elem.weaknesses.filter((ele) => {
+      if (btnId === ele) {
+        let pokemonDivFil = document.getElementById("list-poke")
+        pokemonDivFil.innerHTML +=
+          `
+    <div} class="pokemon-unit">
+      <img data-num=${elem.num} src="${elem.img}" class="poke-img"/>
+      <div data-num=${elem.num} class= "poke-namenum">
+        <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+        <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+      </div> 
+    </div>
+`
+      }
+    })
   })
 }
 
@@ -143,22 +173,36 @@ function showModal(classPokes) {
   }
 }
 
-button.addEventListener('click', () => {
-  document.getElementById("list-poke").innerHTML = "";
-  filterPoke(btnId);
-});
+let selectOpt = document.querySelector("select");
+selectOpt.addEventListener("change", () =>
+  sortPoke(selectOpt.selectedIndex));
 
-function filterPoke(btnId) {
+function sortPoke(ka) {
+  let namePoke = [];
 
-  for (let i in POKEMON["pokemon"]) {
-    let pokeObj = POKEMON["pokemon"][i];
-    let types = POKEMON["pokemon"][i]["type"];
+  for (i in POKEMON["pokemon"]) {
+    namePoke.push(POKEMON["pokemon"][i]["name"]);
 
-    for (j of types) {
-      if (btnId === j) {
-        // console.log("JOTA", j)
-        // console.log("botaoIDDD", btnId)
+    if (ka === 1) {
+      namePoke.sort();
+    } else if (ka === 2) {
+      console.log("passounoelseif")
+      namePoke.sort();
+      namePoke.reverse();
+    }
+  }
 
+  clearScreen();
+
+  for (let i of namePoke) {
+    // console.log("NAMEP", i)
+    for (let j in POKEMON["pokemon"]) {
+      let nameData = POKEMON["pokemon"][j]["name"]
+      // console.log(nameData);
+      let pokeObj = POKEMON["pokemon"][j];
+      // console.log(pokeObj);
+      if (i === nameData) {
+        // console.log("NAMEP", i, nameData)
 
         let pokemonDivFil = document.getElementById("list-poke");
         pokemonDivFil.innerHTML += `
@@ -174,50 +218,27 @@ function filterPoke(btnId) {
     }
   }
 }
+let candyArray = [];
+let sum = 0;
 
-let selectOpt = document.querySelector("select");
-selectOpt.addEventListener("change", () => 
-sortPoke(selectOpt.selectedIndex)); 
-
-function sortPoke(ka) {
-  let namePoke = [];
-
-  for (i in POKEMON["pokemon"]) {
-    namePoke.push(POKEMON["pokemon"][i]["name"]);
-   
-    if (ka === 1) {
-      namePoke.sort();
-    }else if (ka === 2) {
-      console.log("passounoelseif")
-      namePoke.sort();
-      namePoke.reverse();
+// function candyCount() {
+  
+  POKEMON.pokemon.filter((elem) => {
+    if (typeof elem.candy_count === "number"){
+      candyArray.push (elem.candy_count) 
     }
-  }
-
-clearScreen();
-
-  for (let i of namePoke){
-    // console.log("NAMEP", i)
-    for (let j in POKEMON["pokemon"]) {
-      let nameData = POKEMON["pokemon"][j]["name"]
-      // console.log(nameData);
-      let pokeObj = POKEMON["pokemon"][j];
-      // console.log(pokeObj);
-      if (i === nameData){
-        console.log("NAMEP", i, nameData)
-
-         let pokemonDivFil = document.getElementById("list-poke");
-        pokemonDivFil.innerHTML += `
-    <div class="pokemon-unit">
-      <img src="${pokeObj["img"]}" class="poke-img"/>
-      <div class= "poke-namenum">
-        <p class="poke-num"> Nº ${pokeObj["num"]}</p>
-        <h3 class="poke-name">${pokeObj["name"]}</h3>
-      </div> 
-    </div>
-`
+    })
+    for (i of candyArray){
+      sum += i;
       }
-    }
-  }
-}
+      let average = sum/candyArray.length;
+      let max = Math.max.apply(null, candyArray );
+      let min = Math.min.apply(null, candyArray );
+        
+    console.log(candyArray)
+    console.log(sum)
+    console.log(average)
+    console.log(max)
+    console.log(min)
 
+// }

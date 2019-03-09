@@ -22,7 +22,7 @@ img {
  }
 
 .logo-image{
-  height: 80%;
+  width: 10%;
 }
 .filter-buttons{
   display: flex; 

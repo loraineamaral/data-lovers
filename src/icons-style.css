@@ -5,6 +5,13 @@
   padding: 8px 0px 8px 0px;
   font-size: 18px;
 }
+.btn-weaks{
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  padding: 8px 0px 8px 0px;
+  font-size: 18px;
+}
 
 .btn-types:hover {
   background-color: white;
@@ -134,3 +141,4 @@ button[data-btn="FairyW"]{
   font-size: 15px;
   background-color: #ede971;
 }
+
