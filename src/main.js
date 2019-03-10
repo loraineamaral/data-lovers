@@ -225,7 +225,6 @@ stats.addEventListener("click", getHeight)
 stats.addEventListener("click", getWeight)
 stats.addEventListener("click", getTypes)
 
-
 function getTypes() {
   clearScreen();
   document.getElementById("filter-buttons").innerHTML = ""
