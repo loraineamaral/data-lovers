@@ -1,23 +1,19 @@
 window.onload = function () {
-  showPokemons(getPokemons())
+  showPokemons(getPokes)
   showModal('.poke-img')
   showModal('.poke-namenum')
 }
 
 let btnType = document.getElementsByClassName('btn-types');
 let pokemonDivFil = document.getElementById("list-poke");
+let getPokes = POKEMON.pokemon;
 
 function clearScreen() {
   document.getElementById("list-poke").innerHTML = ""
 }
 
-function getPokemons() {
-  return POKEMON["pokemon"];
-}
-
 function showPokemons(getPoke) {
-  let pokemonDiv = document.getElementById("list-poke");
-  pokemonDiv.innerHTML =
+  pokemonDivFil.innerHTML =
     `
     ${getPoke.map((pokelist) =>
       `
@@ -43,7 +39,7 @@ for (button of btnType) {
 
 function filterPokeType(btnId) {
 
-  POKEMON.pokemon.filter((elem) => {
+  getPokes.filter((elem) => {
     elem.type.filter((ele) => {
       if (btnId === ele) {
         // let pokemonDivFil = document.getElementById("list-poke")
@@ -74,7 +70,7 @@ for (button of btnWeak) {
 }
 
   function filterPokeWeak(btnId) {
-    POKEMON.pokemon.filter((elem) => {
+    getPokes.filter((elem) => {
       elem.weaknesses.filter((ele) => {
         if (btnId === ele) {
           let pokemonDivFil = document.getElementById("list-poke")
@@ -99,7 +95,7 @@ for (button of btnWeak) {
       oneClass.addEventListener('click', function (event) {
 
         let dataNum = event.target.getAttribute("data-num")
-        POKEMON["pokemon"].filter((elem) => {
+        getPokes.filter((elem) => {
           if (dataNum === elem.num) {
             document.querySelector('#sec-modal').style.display = "block";
             document.querySelector('.title-name').innerHTML = elem.name;
@@ -134,7 +130,7 @@ for (button of btnWeak) {
 
             if (elem.hasOwnProperty('prev_evolution') === true) {
               elem.prev_evolution.filter((evol) => {
-                POKEMON["pokemon"].filter((elem) => {
+                getPokes.filter((elem) => {
                   if (evol.num === elem.num) {
                     document.querySelector('.sec-evol').innerHTML +=
                       `
@@ -151,7 +147,7 @@ for (button of btnWeak) {
               })
             } else if (elem.hasOwnProperty('next_evolution') === true) {
               elem.next_evolution.filter((evol) => {
-                POKEMON["pokemon"].filter((elem) => {
+                getPokes.filter((elem) => {
                   if (evol.num === elem.num) {
                     document.querySelector('.sec-evol').innerHTML +=
                       `
@@ -182,7 +178,7 @@ for (button of btnWeak) {
 
   function sortPoke(ka) {
     let namePoke = [];
-    POKEMON.pokemon.filter((elem) => {
+    getPokes.filter((elem) => {
      namePoke.push(elem.name) 
     })
       if (ka === 1) {
@@ -194,13 +190,12 @@ for (button of btnWeak) {
     clearScreen();
 
     for (let i of namePoke) {
-      for (let j in POKEMON["pokemon"]) {
-        let nameData = POKEMON["pokemon"][j]["name"]
-        let pokeObj = POKEMON["pokemon"][j];
+      for (let j in getPokes) {
+        let nameData = getPokes[j].name;
+        let pokeObj = getPokes[j];
       
         if (i === nameData) {
           
-          let pokemonDivFil = document.getElementById("list-poke");
           pokemonDivFil.innerHTML += `
 
     <div class="pokemon-unit">
@@ -221,56 +216,110 @@ for (button of btnWeak) {
     btn.addEventListener('click', function () {
       clearScreen();
       if (btn.id === "short") {
-        POKEMON["pokemon"].filter((elem) => {
+        getPokes.filter((elem) => {
           if (elem.height.replace(" m", "") < 1.0) {
-            innerPoke()
+            pokemonDivFil.innerHTML += `
+            <div data-num=${elem.num} class="pokemon-unit">
+            <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+              <div data-num=${elem.num} class= "poke-namenum">
+              <div class="poke-shadow"></div>
+                <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+                <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+              </div> 
+            </div>
+          `
           }
         })
       } else if (btn.id === "medium") {
-        POKEMON["pokemon"].filter((elem) => {
+        getPokes.filter((elem) => {
           if (elem.height.replace(" m", "") > 1.0 && elem.height.replace(" m", "") < 2.0) {
-            innerPoke()
+            pokemonDivFil.innerHTML += `
+            <div data-num=${elem.num} class="pokemon-unit">
+            <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+              <div data-num=${elem.num} class= "poke-namenum">
+              <div class="poke-shadow"></div>
+                <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+                <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+              </div> 
+            </div>
+          `
           }
         })
       } else if (btn.id === "tall") {
-        POKEMON["pokemon"].filter((elem) => {
+        getPokes.filter((elem) => {
           if (elem.height.replace(" m", "") > 2.0) {
-            innerPoke()
+            pokemonDivFil.innerHTML += `
+            <div data-num=${elem.num} class="pokemon-unit">
+            <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+              <div data-num=${elem.num} class= "poke-namenum">
+              <div class="poke-shadow"></div>
+                <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+                <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+              </div> 
+            </div>
+          `
           }
         })
       } else if (btn.id === "light") {
-        POKEMON["pokemon"].filter((elem) => {
+        getPokes.filter((elem) => {
           if (elem.weight.replace(" kg", "") < 45.0) {
-            innerPoke()
+            pokemonDivFil.innerHTML += `
+            <div data-num=${elem.num} class="pokemon-unit">
+            <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+              <div data-num=${elem.num} class= "poke-namenum">
+              <div class="poke-shadow"></div>
+                <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+                <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+              </div> 
+            </div>
+          `
           }
         })
       } else if (btn.id === "mid") {
-        POKEMON["pokemon"].filter((elem) => {
+        getPokes.filter((elem) => {
           if (elem.weight.replace(" kg", "") > 45.0 && elem.weight.replace(" kg", "") < 90.0) {
-            innerPoke()
+            pokemonDivFil.innerHTML += `
+            <div data-num=${elem.num} class="pokemon-unit">
+            <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+              <div data-num=${elem.num} class= "poke-namenum">
+              <div class="poke-shadow"></div>
+                <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+                <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+              </div> 
+            </div>
+          `
           }
         })
       } else if (btn.id === "heavy") {
-        POKEMON["pokemon"].filter((elem) => {
+        getPokes.filter((elem) => {
           if (elem.weight.replace(" kg", "") > 90.0) {
-            innerPoke()
+            pokemonDivFil.innerHTML += `
+            <div data-num=${elem.num} class="pokemon-unit">
+            <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+              <div data-num=${elem.num} class= "poke-namenum">
+              <div class="poke-shadow"></div>
+                <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+                <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+              </div> 
+            </div>
+          `
           }
         })
       }
     })
   }
   
-  function innerPoke() {
-    pokemonDivFil.innerHTML += `
-    <div data-num=${elem.num} class="pokemon-unit">
-    <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
-      <div data-num=${elem.num} class= "poke-namenum">
-      <div class="poke-shadow"></div>
-        <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
-        <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
-      </div> 
-    </div>
-  `}
+  // function innerPoke() {
+  //   pokemonDivFil.innerHTML += `
+  //   <div data-num=${elem.num} class="pokemon-unit">
+  //   <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+  //     <div data-num=${elem.num} class= "poke-namenum">
+  //     <div class="poke-shadow"></div>
+  //       <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+  //       <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+  //     </div> 
+  //   </div>
+  // `}
 
   var stats = document.getElementById("stats-btn")
   stats.addEventListener("click", getTypes)
@@ -304,7 +353,7 @@ for (button of btnWeak) {
     let contSteel = 0;
     let contFairy = 0;
 
-    POKEMON.pokemon.filter((elem) => {
+    getPokes.filter((elem) => {
       typesArray.push(elem.type[0])
       if (typeof elem.type[1] === "string") {
         typesArray.push(elem.type[1])
@@ -402,7 +451,7 @@ for (button of btnWeak) {
 
   function getHeight() {
     let heigthArray = [];
-    POKEMON.pokemon.filter((elem) => {
+    getPokes.filter((elem) => {
       heigthArray.push(elem.height.replace(" m", ""))
     })
     let sumHeight = heigthArray.reduce((a, b) => parseFloat(a) + parseFloat(b));
@@ -423,7 +472,7 @@ for (button of btnWeak) {
 
   function getWeight() {
     let weightArray = [];
-    POKEMON.pokemon.filter((elem) => {
+    getPokes.filter((elem) => {
       weightArray.push(elem.weight.replace(" kg", ""))
     })
     let sumWeight = weightArray.reduce((a, b) => parseFloat(a) + parseFloat(b));
@@ -444,7 +493,7 @@ for (button of btnWeak) {
 
   function getCandy() {
     let candyArray = [];
-    POKEMON.pokemon.filter((elem) => {
+    getPokes.filter((elem) => {
       if (typeof elem.candy_count === "number") {
         candyArray.push(elem.candy_count)
       }
