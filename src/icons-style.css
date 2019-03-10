@@ -32,16 +32,13 @@ button[data-btn="Grass"]{
   background-color: #01fc6a;
 }
 button[data-btn="Ice"]{
-  background-color: #336a8c;
-  color: white;
+  background-color: #4b8ab1;
 }
 button[data-btn="Poison"]{
-  background-color: #680c7f;
-  color: white;
+  background-color: #057731;
 }
 button[data-btn="Ground"]{
-  background-color: #664617;
-  color: white;
+  background-color: #58392c;
 }
 button[data-btn="Fighting"]{
   background-color:#c11313;
@@ -65,8 +62,7 @@ button[data-btn="Dragon"]{
   background-color: #f97b04;
 }
 button[data-btn="Dark"]{
-  background-color: #120e84;
-  color: white;
+  background-color: #14729e;
 }
 button[data-btn="Steel"]{
   background-color: #8989a3;
@@ -74,7 +70,6 @@ button[data-btn="Steel"]{
 button[data-btn="Fairy"]{
   background-color: deeppink;
 }
-
 button[data-btn="NormalW"]{
   background-color: white;
 }
@@ -91,16 +86,13 @@ button[data-btn="GrassW"]{
   background-color: #01fc6a;
 }
 button[data-btn="IceW"]{
-  background-color: #336a8c;
-  color: white;
+  background-color: #4b8ab1;
 }
 button[data-btn="PoisonW"]{
-  background-color: #680c7f;
-  color: white;
+  background-color: #057731;
 }
 button[data-btn="GroundW"]{
-  background-color: #664617;
-  color: white;
+  background-color: #58392c;
 }
 button[data-btn="FightingW"]{
   background-color:#c11313;
@@ -124,8 +116,8 @@ button[data-btn="DragonW"]{
   background-color: #f97b04;
 }
 button[data-btn="DarkW"]{
-  background-color: #120e84;
-  color: white;
+  background-color: #14729e;
+ 
 }
 button[data-btn="SteelW"]{
   background-color: #8989a3;

@@ -225,7 +225,12 @@ stats.addEventListener("click", getHeight)
 stats.addEventListener("click", getWeight)
 stats.addEventListener("click", getTypes)
 
-function getTypes(){
+
+function getTypes() {
+  clearScreen();
+  document.getElementById("filter-buttons").innerHTML = ""
+  document.getElementById("show-poke").innerHTML = ""
+
   let typesArray = [];
   let contNormal = 0;
   let contFire = 0;
@@ -245,54 +250,100 @@ function getTypes(){
   let contDark = 0;
   let contSteel = 0;
   let contFairy = 0;
-  
+
   POKEMON.pokemon.filter((elem) => {
-          typesArray.push(elem.type[0]) 
-          if (typeof elem.type[1] === "string") {
-            typesArray.push(elem.type[1])
-          }
+    typesArray.push(elem.type[0])
+    if (typeof elem.type[1] === "string") {
+      typesArray.push(elem.type[1])
+    }
   })
   typesArray.filter((elem) => {
-      if (elem === "Normal"){
+    if (elem === "Normal") {
       contNormal += 1;
-      }if (elem === "Fire"){
-        contFire += 1;
-        }if (elem === "Water"){
-          contWater += 1;
-        }if (elem === "Electric"){
-            contElectric += 1;
-            }if (elem === "Grass"){
-              contGrass += 1;
-              }if (elem === "Ice"){
-                contIce += 1;
-                }if (elem === "Poison"){
-                  contPoison += 1;
-                  }if (elem === "Ground"){
-                    contGround += 1;
-                    }if (elem === "Fighting"){
-                      contFighting += 1;
-                      }if (elem === "Flying"){
-                        contFlying += 1;
-                        }if (elem === "Psychic"){
-                          contPsychic += 1;
-                          }if (elem === "Bug"){
-                            contBug += 1;
-                            }if (elem === "Rock"){
-                              contRock += 1;
-                              }if (elem === "Ghost"){
-                                contGhost += 1;
-                                }if (elem === "Dragon"){
-                                  contDragon += 1;
-                                  }if (elem === "Dark"){
-                                    contDark += 1;
-                                    }if (elem === "Steel"){
-                                      contSteel += 1;
-                                      }if (elem === "Fairy"){
-                                        contFairy += 1;
-                                        }
-              
-    })
+    } if (elem === "Fire") {
+      contFire += 1;
+    } if (elem === "Water") {
+      contWater += 1;
+    } if (elem === "Electric") {
+      contElectric += 1;
+    } if (elem === "Grass") {
+      contGrass += 1;
+    } if (elem === "Ice") {
+      contIce += 1;
+    } if (elem === "Poison") {
+      contPoison += 1;
+    } if (elem === "Ground") {
+      contGround += 1;
+    } if (elem === "Fighting") {
+      contFighting += 1;
+    } if (elem === "Flying") {
+      contFlying += 1;
+    } if (elem === "Psychic") {
+      contPsychic += 1;
+    } if (elem === "Bug") {
+      contBug += 1;
+    } if (elem === "Rock") {
+      contRock += 1;
+    } if (elem === "Ghost") {
+      contGhost += 1;
+    } if (elem === "Dragon") {
+      contDragon += 1;
+    } if (elem === "Dark") {
+      contDark += 1;
+    } if (elem === "Steel") {
+      contSteel += 1;
+    } if (elem === "Fairy") {
+      contFairy += 1;
+    }
 
+  })
+
+  google.charts.load("current", { packages: ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    let data = google.visualization.arrayToDataTable([
+      ["Tipo", "Quantidade", { role: "style" }],
+      ["Normal", contNormal, "black",],
+      ["Fire", contFire, "red"],
+      ["Water", contWater, "#54e5ca"],
+      ["Electric", contElectric, "#fca002"],
+      ["Grass", contGrass, "#01fc6a"],
+      ["Ice", contIce, "#336a8c"],
+      ["Poison", contPoison, "#680c7f"],
+      ["Ground", contGround, "#664617"],
+      ["Fighting", contFighting, "#c11313"],
+      ["Flying", contFlying, "#133ac6"],
+      ["Psychic", contPsychic, "#d154e"],
+      ["Bug", contBug, "##b7e554"],
+      ["Rock", contRock, "#949989"],
+      ["Ghost", contGhost, "#c8abcc"],
+      ["Dragon", contDragon, "#f97b04"],
+      ["Dark", contDark, "#120e84"],
+      ["Steel", contSteel, "#8989a3"],
+      ["Fairy", contFairy, "deeppink"]
+
+    ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1,
+      {
+        calc: "stringify",
+        sourceColumn: 1,
+        type: "string",
+        role: "none"
+      },
+      2]);
+
+    var options = {
+      title: "Tipos de Pokemons",
+      width: 800,
+      height: 400,
+      bar: { groupWidth: "90%" },
+      legend: { position: "none" },
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+    chart.draw(view, options);
+  }
 }
 
 function getHeight() {
@@ -305,7 +356,15 @@ function getHeight() {
   let maxHeight = Math.max.apply(null, heigthArray);
   let minHeight = Math.min.apply(null, heigthArray);
 
-  document.getElementById("height-stats").innerHTML = "Média: " + avgHeight + " Máximo: " + maxHeight + " Mínimo: " + minHeight;
+  let pokeDivHeight = document.getElementById("height-stats")
+  pokeDivHeight.innerHTML = `
+     <ul class= "hwc-stats">
+       <p class="title-stats">ALTURA</p>
+          <li>Altura Média: ${avgHeight} m</li>
+          <li>Altura Máxima: ${maxHeight} m</li>
+          <li>Altura Mínima: ${minHeight} m</li>
+      </ul>
+     `
 }
 
 function getWeight() {
@@ -318,13 +377,18 @@ function getWeight() {
   let maxWeight = Math.max.apply(null, weightArray);
   let minWeight = Math.min.apply(null, weightArray);
 
-  document.getElementById("weight-stats").innerHTML = "Média: " + avgWeight + " Máximo: " + maxWeight + " Mínimo: " + minWeight;
+  let pokeDivWeight = document.getElementById("weight-stats")
+  pokeDivWeight.innerHTML = `
+     <ul class= "hwc-stats">
+       <p class="title-stats">PESO</p>
+          <li>Peso Médio: ${avgWeight} kg</li>
+          <li>Peso Máximo: ${maxWeight} kg</li>
+          <li>Peso Mínimo: ${minWeight} kg</li>
+      </ul>
+     `
 }
 
 function candyCount() {
-  clearScreen();
-  document.getElementById("filter-buttons").innerHTML = ""
-  document.getElementById("show-poke").innerHTML = ""
   let candyArray = [];
   POKEMON.pokemon.filter((elem) => {
     if (typeof elem.candy_count === "number") {
@@ -336,5 +400,13 @@ function candyCount() {
   let maxCandy = Math.max.apply(null, candyArray);
   let minCandy = Math.min.apply(null, candyArray);
 
-  document.getElementById("candy-stats").innerHTML = "Média: " + avgCandy + " Máximo: " + maxCandy + " Mínimo: " + minCandy;
+  let pokeDivCandy = document.getElementById("candy-stats")
+  pokeDivCandy.innerHTML = `
+  <ul class= "hwc-stats">
+    <p class="title-stats">CANDY</p>
+       <li></i>Candy Médio: ${avgCandy}</li>
+       <li></i>Candy Máximo: ${maxCandy}</li>
+       <li></i>Candy Mínimo: ${minCandy}</li>
+   </ul>
+  `
 }

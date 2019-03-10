@@ -5,16 +5,16 @@
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="icons-style.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet"> 
+  <link rel="stylesheet" href="stats-style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet"> 
   </head>
 <body>
-  <header class="black-bar">
+  <header class="black-bar" id="black-bar">
     <form>
-    <button id= "home-btn" type="submit" formtarget="_self">Home</button></form>
-    <button id="stats-btn">Estatísticas</button>
+    <button id= "home-btn" type="submit" formtarget="_self" class="home-btn">Home</button></form>
     <img src="../assets/images/pokelogo.png" alt="pokelogo" class="logo-image" id="topo">
+    <button id="stats-btn" class="stats-btn">Estatísticas</button>
   </header>
   </header>
   <main>
@@ -77,11 +77,10 @@
           </div>
           <div class="div-mother-weigth">
             <h1 class="text-style">Peso</h1>
-            <div class="weigth">
+            <div>
               <button class= "icon-h-w"><i class="fas fa-weight-hanging"></i></button>
               <button class= "icon-h-w"><i class="fas fa-weigth-hanging"></i><i class="fas fa-weight-hanging"></i></button>
               <button class= "icon-h-w"><i class="fas fa-weight-hanging"></i><i class="fas fa-weight-hanging"></i><i class="fas fa-weight-hanging"></i></button>
-
           </div>
         </div>
       </section>
@@ -124,23 +123,22 @@
       </div>
     </section>
     <div id="root"></div>
+
+    <section id="charts" class="charts">
+      <div id="columnchart_values" class="chart-types"></div>  
+    </section>
+    <section class="stats">
+        <div id= "height-stats"></div>
+        <div id= "weight-stats"></div>
+        <div id= "candy-stats"></div>
+    </section>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="main.js"></script>
+  
   </main>
 
-  <section id="charts">
-    <h1>Estatísticas</h1>
-    <p>Tipos de Pokémons</p>
-    <div id="type-stats"></div>
-    <p>Altura dos Pokémons</p>
-    <div id= "height-stats"></div>
-    <p>Peso dos Pokémons</p>
-    <div id= "weight-stats"></div>
-    <p>Estatísticas de Candy</p>
-    <div id= "candy-stats"></div>
-    
-  </section>
-
-</body>
+  </body>
 
 </html>
