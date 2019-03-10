@@ -71,12 +71,6 @@ img {
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
 }
-.modal-content{
-  text-align: center;
-  background-color: white;
-  padding: 20px;
-  width: 80%;
-}
 .title-name{
   font-family: 'Signika', sans-serif;
   font-size: 50px;
@@ -146,9 +140,9 @@ img {
 }
 .modal-content{
   background-color: white;
-  margin: 30% auto;
   padding: 10%;
   width: 80%;
+  padding: 20px;
 }
 .title-name{
   font-family: 'Signika', sans-serif;
