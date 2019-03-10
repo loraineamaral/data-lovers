@@ -1,9 +1,11 @@
-
 window.onload = function () {
   showPokemons(getPokemons())
   showModal('.poke-img')
   showModal('.poke-namenum')
 }
+
+let btnType = document.getElementsByClassName('btn-types');
+let pokemonDivFil = document.getElementById("list-poke");
 
 function clearScreen() {
   document.getElementById("list-poke").innerHTML = ""
@@ -45,12 +47,13 @@ function filterPokeType(btnId) {
   POKEMON.pokemon.filter((elem) => {
     elem.type.filter((ele) => {
       if (btnId === ele) {
-        let pokemonDivFil = document.getElementById("list-poke")
+        // let pokemonDivFil = document.getElementById("list-poke")
         pokemonDivFil.innerHTML +=
           `
-    <div} class="pokemon-unit">
-      <img data-num=${elem.num} src="${elem.img}" class="poke-img"/>
+    <div data-num=${elem.num} class="pokemon-unit">
+     <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
       <div data-num=${elem.num} class= "poke-namenum">
+      <div class="poke-shadow"></div>
         <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
         <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
       </div> 
@@ -61,10 +64,14 @@ function filterPokeType(btnId) {
   })
 }
 
+for (button of btnType) {
+  let btnId = button.id;
+
 let btnWeak = document.getElementsByClassName('btn-weaks')
 
 for (button of btnWeak) {
   let btnId = button.getAttribute("data-btn");
+
   button.addEventListener('click', () => {
     document.getElementById("list-poke").innerHTML = "";
     filterPokeWeak(btnId);
@@ -115,6 +122,7 @@ function showModal(classPokes) {
 
           elem.weaknesses.filter((typ) => {
             for (let btn of document.querySelectorAll('.btn-types')) {
+              // for (let btn of document.querySelectorAll('.btn-weaks')) {
               if (typ === btn.id) {
                 document.querySelector('.div-weak').innerHTML += btn.outerHTML
               }
@@ -146,7 +154,7 @@ function showModal(classPokes) {
                 }
               })
             })
-          } if (elem.hasOwnProperty('next_evolution') === true) {
+          } else if (elem.hasOwnProperty('next_evolution') === true) {
             elem.next_evolution.filter((evol) => {
               POKEMON["pokemon"].filter((elem) => {
                 if (evol.num === elem.num) {
@@ -164,10 +172,37 @@ function showModal(classPokes) {
               })
             })
           }
-
         }
       }
       )
+
+    let selectOpt = document.querySelector("select");
+    selectOpt.addEventListener("change", () =>
+      sortPoke(selectOpt.selectedIndex));
+
+    function sortPoke(ka) {
+      let namePoke = [];
+
+      for (i in POKEMON["pokemon"]) {
+        namePoke.push(POKEMON["pokemon"][i]["name"]);
+
+        if (ka === 1) {
+          namePoke.sort();
+        } else if (ka === 2) {
+          namePoke.sort();
+          namePoke.reverse();
+        }
+      }
+
+      clearScreen();
+
+      for (let i of namePoke) {
+        for (let j in POKEMON["pokemon"]) {
+          let nameData = POKEMON["pokemon"][j]["name"]
+          let pokeObj = POKEMON["pokemon"][j];
+          if (i === nameData) {
+            let pokemonDivFil = document.getElementById("list-poke");
+            pokemonDivFil.innerHTML += `
     }
     )
   }
@@ -206,6 +241,7 @@ function sortPoke(ka) {
 
         let pokemonDivFil = document.getElementById("list-poke");
         pokemonDivFil.innerHTML += `
+
     <div class="pokemon-unit">
       <img src="${pokeObj["img"]}" class="poke-img"/>
       <div class= "poke-namenum">
@@ -214,10 +250,69 @@ function sortPoke(ka) {
       </div> 
     </div>
 `
+          }
+        }
       }
     }
   }
 }
+for (let btn of document.querySelectorAll('.icon-h-w')) {
+  btn.addEventListener('click', function () {
+    clearScreen();
+    if (btn.id === "short") {
+      POKEMON["pokemon"].filter((elem) => {
+        if (elem.height.replace(" m", "") < 1.0) {
+          innerPoke()
+        }
+      })
+    } else if (btn.id === "medium") {
+      POKEMON["pokemon"].filter((elem) => {
+        if (elem.height.replace(" m", "") > 1.0 && elem.height.replace(" m", "") < 2.0) {
+          innerPoke()
+        }
+      })
+    } else if (btn.id === "tall") {
+      POKEMON["pokemon"].filter((elem) => {
+        if (elem.height.replace(" m", "") > 2.0) {
+          innerPoke()
+        }
+      })
+    } else if (btn.id === "light") {
+      POKEMON["pokemon"].filter((elem) => {
+        if (elem.weight.replace(" kg", "") < 45.0) {
+          innerPoke()
+        }
+      })
+    } else if (btn.id === "mid") {
+      POKEMON["pokemon"].filter((elem) => {
+        if (elem.weight.replace(" kg", "") > 45.0 && elem.weight.replace(" kg", "") < 90.0) {
+          innerPoke()
+        }
+      })
+    } else if (btn.id === "heavy") {
+      POKEMON["pokemon"].filter((elem) => {
+        if (elem.weight.replace(" kg", "") > 90.0) {
+          innerPoke()
+        }
+      })
+    }
+  })
+}
+
+function innerPoke() {
+  pokemonDivFil.innerHTML += `
+  <div data-num=${elem.num} class="pokemon-unit">
+  <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+    <div data-num=${elem.num} class= "poke-namenum">
+    <div class="poke-shadow"></div>
+      <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+      <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+    </div> 
+  </div>
+`}
+
+let candyArray = [];
+let sum = 0;
 
 var stats = document.getElementById("stats-btn")
 stats.addEventListener("click", candyCount)
@@ -256,6 +351,7 @@ function getTypes() {
     if (typeof elem.type[1] === "string") {
       typesArray.push(elem.type[1])
     }
+
   })
   typesArray.filter((elem) => {
     if (elem === "Normal") {
