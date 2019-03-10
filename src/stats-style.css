@@ -1,0 +1,37 @@
+
+.charts{
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-types{
+  font-family: 'Signika', sans-serif;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: lightblue;
+  padding-top: 20px;
+}
+
+.hwc-stats{
+  border: 1px solid transparent;
+  font-family: 'Signika', sans-serif;
+  width: 90%;
+  background: url(../assets/images/whiteandgrey.png);
+  padding: 0 30px 20px 30px;
+  border-radius: 20px;
+}
+.title-stats{
+  text-align: center;
+  border-radius: 20px;
+}
