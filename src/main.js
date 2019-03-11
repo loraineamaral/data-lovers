@@ -1,232 +1,180 @@
-
 window.onload = function () {
-  showPokemons(getPokemons())
+  showPokemons(getPokes)
   showModal('.poke-img')
   showModal('.poke-namenum')
 }
 
-function clearScreen() {
-  document.getElementById("list-poke").innerHTML = ""
+const btnType = document.getElementsByClassName('btn-types');
+const pokemonDivFil = document.getElementById("list-poke");
+const getPokes = POKEMON.pokemon;
+const selectOpt = document.querySelector("select");
+const btnWeak = document.getElementsByClassName('btn-weaks');
+const stats = document.getElementById("stats-btn")
+
+selectOpt.addEventListener("change", () =>
+  sortPoke(selectOpt.selectedIndex));
+
+function pokeUnit(poke) {
+  return `
+  <div data-num=${poke.num} class="pokemon-unit">
+    <img data-num=${poke.num} class="poke-img" src="${poke.img}"/>
+    <div data-num=${poke.num} class= "poke-namenum">
+    <div class="poke-shadow"></div>
+      <p data-num=${poke.num} class="poke-num"> Nº ${poke.num} </p>
+      <h3 data-num=${poke.num} class="poke-name">${poke.name}</h3>
+    </div> 
+  </div>
+`
 }
 
-function getPokemons() {
-  return POKEMON["pokemon"];
+function clearScreen(screen) {
+  document.querySelector(screen).innerHTML = "";
 }
 
 function showPokemons(getPoke) {
-  let pokemonDiv = document.getElementById("list-poke");
-  pokemonDiv.innerHTML =
+  pokemonDivFil.innerHTML =
     `
-    ${getPoke.map((pokelist) =>
-      `
-      <div data-num=${pokelist.num} class="pokemon-unit">
-        <img data-num=${pokelist.num} class="poke-img" src="${pokelist.img}"/>
-        <div data-num=${pokelist.num} class= "poke-namenum">
-        <div class="poke-shadow"></div>
-          <p data-num=${pokelist.num} class="poke-num"> Nº ${pokelist.num}</p>
-          <h3 data-num=${pokelist.num} class="poke-name">${pokelist.name}</h3>
-        </div> 
-      </div>
-`).join("")}
+    ${getPoke.map((pokelist) => pokeUnit(pokelist)).join("")}
 `
-}
-
-let btnType = document.getElementsByClassName('btn-types')
-for (button of btnType) {
-  let btnId = button.getAttribute("data-btn")
-  button.addEventListener('click', () => {
-    document.getElementById("list-poke").innerHTML = "";
-    filterPokeType(btnId);
-  })
 }
 
 function filterPokeType(btnId) {
-
-  POKEMON.pokemon.filter((elem) => {
+  getPokes.filter((elem) => {
     elem.type.filter((ele) => {
       if (btnId === ele) {
-        let pokemonDivFil = document.getElementById("list-poke")
-        pokemonDivFil.innerHTML +=
-          `
-    <div} class="pokemon-unit">
-      <img data-num=${elem.num} src="${elem.img}" class="poke-img"/>
-      <div data-num=${elem.num} class= "poke-namenum">
-        <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
-        <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
-      </div> 
-    </div>
-`
+        pokemonDivFil.innerHTML += pokeUnit(elem);
       }
-    })
-  })
-}
-
-let btnWeak = document.getElementsByClassName('btn-weaks')
-
-for (button of btnWeak) {
-  let btnId = button.getAttribute("data-btn");
-  button.addEventListener('click', () => {
-    document.getElementById("list-poke").innerHTML = "";
-    filterPokeWeak(btnId);
-  })
+    }
+    )
+  }
+  )
+  showModal('.poke-img')
+  showModal('.poke-namenum')
 }
 
 function filterPokeWeak(btnId) {
-  POKEMON.pokemon.filter((elem) => {
+  getPokes.filter((elem) => {
     elem.weaknesses.filter((ele) => {
       if (btnId === ele) {
         let pokemonDivFil = document.getElementById("list-poke")
-        pokemonDivFil.innerHTML +=
-          `
-    <div} class="pokemon-unit">
-      <img data-num=${elem.num} src="${elem.img}" class="poke-img"/>
-      <div data-num=${elem.num} class= "poke-namenum">
-        <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
-        <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
-      </div> 
-    </div>
-`
+        pokemonDivFil.innerHTML += pokeUnit(elem);
       }
-    })
-  })
+    }
+    )
+  }
+  )
+  showModal('.poke-img')
+  showModal('.poke-namenum')
 }
 
-function showModal(classPokes) {
-  let pokesClass = document.querySelectorAll(classPokes)
-  for (let oneClass of pokesClass) {
-    oneClass.addEventListener('click', function (event) {
+  for (button of btnType) {
+    let btnData = button.getAttribute("data-btn")
+    button.addEventListener('click', () => {
+      document.getElementById("list-poke").innerHTML = "";
+      filterPokeType(btnData)
+    }
+    )
+  }
 
-      let dataNum = event.target.getAttribute("data-num")
-      POKEMON["pokemon"].filter((elem) => {
-        if (dataNum === elem.num) {
-          document.querySelector('#sec-modal').style.display = "block";
-          document.querySelector('.title-name').innerHTML = elem.name;
-          document.querySelector('#photo-poke').innerHTML = `
-          <img src="${elem.img}"/>
-          `
-          document.querySelector('.poke-description').innerHTML = `
-          <ul>
-          <li>N° ${elem.num}</li>
-          <li>Altura: ${elem.height}</li>
-          <li>Peso: ${elem.weight}</li>
-          <li>${elem.candy}</li>
-          </ul>
-          `
+for (button of btnWeak) {
+  let btnData = button.getAttribute("data-btn");
+  button.addEventListener('click', () => {
+    document.getElementById("list-poke").innerHTML = "";
+    filterPokeWeak(btnData);
+  }
+  )
+}
 
-          elem.weaknesses.filter((typ) => {
-            for (let btn of document.querySelectorAll('.btn-types')) {
-              if (typ === btn.id) {
-                document.querySelector('.div-weak').innerHTML += btn.outerHTML
-              }
-            }
-          })
+function sortPoke(ka) {
+  let namePoke = [];
+  getPokes.filter((elem) => {
+    namePoke.push(elem.name)
+  }
+  )
+  if (ka === 1) {
+    namePoke.sort();
+  } else if (ka === 2) {
+    namePoke.sort();
+    namePoke.reverse();
+  }
+  clearScreen('.list-poke');
 
-          elem.type.filter((typ) => {
-            for (let btn of document.querySelectorAll('.btn-types')) {
-              if (typ === btn.id) {
-                document.querySelector('.div-types').innerHTML += `${btn.outerHTML}`;
-              }
-            }
-          })
+  for (let i of namePoke) {
+    for (let j in getPokes) {
+      let nameData = getPokes[j].name;
+      let pokeObj = getPokes[j];
+      if (i === nameData) {
+        pokemonDivFil.innerHTML += pokeUnit(pokeObj)
+      }
+    }
+  }
+}
 
-          if (elem.hasOwnProperty('prev_evolution') === true) {
-            elem.prev_evolution.filter((evol) => {
-              POKEMON["pokemon"].filter((elem) => {
-                if (evol.num === elem.num) {
-                  document.querySelector('.sec-evol').innerHTML +=
-                    `
-                  <div data-num=${elem.num} class="pokemon-unit">
-                    <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
-                    <div data-num=${elem.num} class= "poke-namenum">
-                      <p data-num=${elem.num} class="poke-num"> Nº ${elem.num}</p>
-                      <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
-                    </div> 
-                  </div>
-            `
-                }
-              })
-            })
-          } if (elem.hasOwnProperty('next_evolution') === true) {
-            elem.next_evolution.filter((evol) => {
-              POKEMON["pokemon"].filter((elem) => {
-                if (evol.num === elem.num) {
-                  document.querySelector('.sec-evol').innerHTML +=
-                    `
-                  <div data-num=${elem.num} class="pokemon-unit">
-                    <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
-                    <div data-num=${elem.num} class= "poke-namenum">
-                      <p data-num=${elem.num} class="poke-num"> Nº ${elem.num}</p>
-                      <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
-                    </div> 
-                  </div>
-            `
-                }
-              })
-            })
-          }
 
+for (let btn of document.querySelectorAll('.icon-h-w')) {
+  btn.addEventListener('click', function () {
+    clearScreen('.list-poke')
+    if (btn.id === "short") {
+      getPokes.filter((elem) => {
+        if (elem.height.replace(" m", "") < 1.0) {
+          pokemonDivFil.innerHTML += pokeUnit(elem);
+        }
+      }
+      )
+    } else if (btn.id === "medium") {
+      getPokes.filter((elem) => {
+        if (elem.height.replace(" m", "") > 1.0 && elem.height.replace(" m", "") < 2.0) {
+          pokemonDivFil.innerHTML += pokeUnit(elem);
+        }
+      }
+      )
+    } else if (btn.id === "tall") {
+      getPokes.filter((elem) => {
+        if (elem.height.replace(" m", "") > 2.0) {
+          pokemonDivFil.innerHTML += pokeUnit(elem);
+        }
+      }
+      )
+    } else if (btn.id === "light") {
+      getPokes.filter((elem) => {
+        if (elem.weight.replace(" kg", "") < 45.0) {
+          pokemonDivFil.innerHTML += pokeUnit(elem);
+        }
+      }
+      )
+    } else if (btn.id === "mid") {
+      getPokes.filter((elem) => {
+        if (elem.weight.replace(" kg", "") > 45.0 && elem.weight.replace(" kg", "") < 90.0) {
+          pokemonDivFil.innerHTML += pokeUnit(elem);
+        }
+      }
+      )
+    } else if (btn.id === "heavy") {
+      getPokes.filter((elem) => {
+        if (elem.weight.replace(" kg", "") > 90.0) {
+          pokemonDivFil.innerHTML += pokeUnit(elem);
         }
       }
       )
     }
-    )
+    showModal('.poke-img')
+    showModal('.poke-namenum')
   }
+  )
 }
 
-let selectOpt = document.querySelector("select");
-selectOpt.addEventListener("change", () =>
-  sortPoke(selectOpt.selectedIndex));
 
-function sortPoke(ka) {
-  let namePoke = [];
-
-  for (i in POKEMON["pokemon"]) {
-    namePoke.push(POKEMON["pokemon"][i]["name"]);
-
-    if (ka === 1) {
-      namePoke.sort();
-    } else if (ka === 2) {
-      console.log("passounoelseif")
-      namePoke.sort();
-      namePoke.reverse();
-    }
-  }
-
-  clearScreen();
-
-  for (let i of namePoke) {
-    // console.log("NAMEP", i)
-    for (let j in POKEMON["pokemon"]) {
-      let nameData = POKEMON["pokemon"][j]["name"]
-      // console.log(nameData);
-      let pokeObj = POKEMON["pokemon"][j];
-      // console.log(pokeObj);
-      if (i === nameData) {
-        // console.log("NAMEP", i, nameData)
-
-        let pokemonDivFil = document.getElementById("list-poke");
-        pokemonDivFil.innerHTML += `
-    <div class="pokemon-unit">
-      <img src="${pokeObj["img"]}" class="poke-img"/>
-      <div class= "poke-namenum">
-        <p class="poke-num"> Nº ${pokeObj["num"]}</p>
-        <h3 class="poke-name">${pokeObj["name"]}</h3>
-      </div> 
-    </div>
-`
-      }
-    }
-  }
-}
-
-var stats = document.getElementById("stats-btn")
-stats.addEventListener("click", candyCount)
+stats.addEventListener("click", getTypes)
 stats.addEventListener("click", getHeight)
 stats.addEventListener("click", getWeight)
+
 stats.addEventListener("click", getTypes)
 
+stats.addEventListener("click", getCandy)
+
+
 function getTypes() {
-  clearScreen();
+  clearScreen('.list-poke');
   document.getElementById("filter-buttons").innerHTML = ""
   document.getElementById("show-poke").innerHTML = ""
 
@@ -250,12 +198,14 @@ function getTypes() {
   let contSteel = 0;
   let contFairy = 0;
 
-  POKEMON.pokemon.filter((elem) => {
+  getPokes.filter((elem) => {
     typesArray.push(elem.type[0])
     if (typeof elem.type[1] === "string") {
       typesArray.push(elem.type[1])
     }
-  })
+
+  }
+  )
   typesArray.filter((elem) => {
     if (elem === "Normal") {
       contNormal += 1;
@@ -294,34 +244,34 @@ function getTypes() {
     } if (elem === "Fairy") {
       contFairy += 1;
     }
-
-  })
+  }
+  )
 
   google.charts.load("current", { packages: ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
   function drawChart() {
     let data = google.visualization.arrayToDataTable([
       ["Tipo", "Quantidade", { role: "style" }],
-      ["Normal", contNormal, "black",],
-      ["Fire", contFire, "red"],
-      ["Water", contWater, "#54e5ca"],
-      ["Electric", contElectric, "#fca002"],
-      ["Grass", contGrass, "#01fc6a"],
-      ["Ice", contIce, "#336a8c"],
-      ["Poison", contPoison, "#680c7f"],
-      ["Ground", contGround, "#664617"],
-      ["Fighting", contFighting, "#c11313"],
-      ["Flying", contFlying, "#133ac6"],
-      ["Psychic", contPsychic, "#d154e"],
-      ["Bug", contBug, "##b7e554"],
-      ["Rock", contRock, "#949989"],
-      ["Ghost", contGhost, "#c8abcc"],
-      ["Dragon", contDragon, "#f97b04"],
-      ["Dark", contDark, "#120e84"],
-      ["Steel", contSteel, "#8989a3"],
-      ["Fairy", contFairy, "deeppink"]
-
-    ]);
+      ["Normal", contNormal, "#A4ACAF",],
+      ["Fire", contFire, "#FB7D33"],
+      ["Water", contWater, "#19A6F4"],
+      ["Electric", contElectric, "#EDD346"],
+      ["Grass", contGrass, "#9CCA58"],
+      ["Ice", contIce, "#57C4E5"],
+      ["Poison", contPoison, "#B881C7"],
+      ["Ground", contGround, "#63491A"],
+      ["Fighting", contFighting, "#CE5824"],
+      ["Flying", contFlying, "#AEEDFC"],
+      ["Psychic", contPsychic, "#F169B8"],
+      ["Bug", contBug, "#739E45"],
+      ["Rock", contRock, "#5B563F"],
+      ["Ghost", contGhost, "#674A9E"],
+      ["Dragon", contDragon, "#EF6F5C"],
+      ["Dark", contDark, "#484849"],
+      ["Steel", contSteel, "#90AFAF"],
+      ["Fairy", contFairy, "#FCBAE8"]
+    ]
+    );
 
     var view = new google.visualization.DataView(data);
     view.setColumns([0, 1,
@@ -330,16 +280,24 @@ function getTypes() {
         sourceColumn: 1,
         type: "string",
         role: "none"
-      },
-      2]);
+        },
+      2]
+    )
 
     var options = {
       title: "Tipos de Pokemons",
-      width: 800,
+      titleTextStyle: { fontSize: 20},
+      
+      width: 1000,
       height: 400,
-      bar: { groupWidth: "90%" },
+      backgroundColor: "white",
+      fontName: 'Signika',
+      bar: { groupWidth: "80%" },
       legend: { position: "none" },
-    };
+      hAxis: { fontSize: 9,
+               slantedText: "true" }    
+          };
+
     var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
     chart.draw(view, options);
   }
@@ -347,9 +305,10 @@ function getTypes() {
 
 function getHeight() {
   let heigthArray = [];
-  POKEMON.pokemon.filter((elem) => {
+  getPokes.filter((elem) => {
     heigthArray.push(elem.height.replace(" m", ""))
-  })
+  }
+  )
   let sumHeight = heigthArray.reduce((a, b) => parseFloat(a) + parseFloat(b));
   let avgHeight = (sumHeight / heigthArray.length).toFixed(2);
   let maxHeight = Math.max.apply(null, heigthArray);
@@ -368,7 +327,7 @@ function getHeight() {
 
 function getWeight() {
   let weightArray = [];
-  POKEMON.pokemon.filter((elem) => {
+  getPokes.filter((elem) => {
     weightArray.push(elem.weight.replace(" kg", ""))
   })
   let sumWeight = weightArray.reduce((a, b) => parseFloat(a) + parseFloat(b));
@@ -387,13 +346,14 @@ function getWeight() {
      `
 }
 
-function candyCount() {
+function getCandy() {
   let candyArray = [];
-  POKEMON.pokemon.filter((elem) => {
+  getPokes.filter((elem) => {
     if (typeof elem.candy_count === "number") {
       candyArray.push(elem.candy_count)
     }
-  })
+  }
+  )
   let candySum = candyArray.reduce((a, b) => a + b);
   let avgCandy = candySum / candyArray.length;
   let maxCandy = Math.max.apply(null, candyArray);
@@ -409,3 +369,22 @@ function candyCount() {
    </ul>
   `
 }
+
+function hoverIcons(btnHover){
+
+for (button of btnHover) {
+  let btnData = button.getAttribute("data-btn")
+    button.innerHTML +=
+    `       
+    <span class="btn-hover">${btnData}</span>
+    `
+    }
+
+  }
+
+  hoverIcons(btnType)
+  hoverIcons(btnWeak)
+
+
+        
+   

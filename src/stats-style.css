@@ -1,24 +1,35 @@
 
 .charts{
   background-color: lightblue;
-  display: flex;
+   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 
 .chart-types{
   font-family: 'Signika', sans-serif;
-  background-color: white;
-  margin-top: 20px;
   border-radius: 20px;
-  z-index: 2;
+  padding: 10px ;
+  z-index: 0;
+  
+}
+.chart-back{
+  background-color: white;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  border-radius: 20px;
+}
+.pika-img{
+  margin-right: 20px;
+  border-radius: 50%;
 }
 
 .stats{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: lightblue;
   padding-top: 20px;
 }
@@ -30,6 +41,7 @@
   background: url(../assets/images/whiteandgrey.png);
   padding: 0 30px 20px 30px;
   border-radius: 20px;
+  background-color: white;
 }
 .title-stats{
   text-align: center;
