@@ -9,7 +9,7 @@ const pokemonDivFil = document.getElementById("list-poke");
 const getPokes = POKEMON.pokemon;
 const selectOpt = document.querySelector("select");
 const btnWeak = document.getElementsByClassName('btn-weaks');
-const stats = document.getElementById("stats-btn")
+
 
 selectOpt.addEventListener("change", () =>
   sortPoke(selectOpt.selectedIndex));
@@ -163,11 +163,29 @@ for (let btn of document.querySelectorAll('.icon-h-w')) {
   )
 }
 
+document.getElementById("stats-btn").addEventListener("click", getStats)
 
-stats.addEventListener("click", getTypes)
-stats.addEventListener("click", getHeight)
-stats.addEventListener("click", getWeight)
-stats.addEventListener("click", getCandy)
+function getStats(){
+console.log("passou")
+
+  let chooseStats = document.getElementById("stats-menu")
+  chooseStats.innerHTML = `
+  <div class="stats-menu">
+  <img src="../assets/images/picachu.png"  alt="picachugif" class="pika-img"/>  
+        <button id="type-chart">Tipos</button>
+        <button id="stats-h">Altura</button>
+        <button id="stats-w">Peso</button>
+        <button id="stats-c">Candy</button>
+   </div>
+   `
+}
+
+
+
+// stats.addEventListener("click", getTypes)
+// stats.addEventListener("click", getHeight)
+// stats.addEventListener("click", getWeight)
+// stats.addEventListener("click", getCandy)
 
 function getTypes() {
   clearScreen('.list-poke');

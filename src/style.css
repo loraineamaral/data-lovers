@@ -50,11 +50,11 @@ ul{
   width: 100vw;
   padding: 130px 0 50px 0;
   background-color: lightblue;
-  justify-content: center;
+  justify-content: flex-end;
   }
 
  .types-weakness{
-  width: 70%;   
+  width: 70%; 
 }
 
 .height-weigth{
@@ -69,11 +69,12 @@ ul{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background: url(../assets/images/whiteandgrey.png);
 }
 .pokemon-unit{
   border: 1px solid transparent;
   width: 150px;
-  background: url(../assets/images/whiteandgrey.png);
+  
   display: flex;
   flex-direction: column;
   background-color: #f2f2f2;
@@ -131,6 +132,7 @@ ul{
   justify-content: flex-end;
   padding: 30px 80px 0 0;
   background-color:white;
+  
 }
 .menu-select{
   font-family: 'Signika', sans-serif;

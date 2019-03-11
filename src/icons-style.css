@@ -120,6 +120,7 @@ button[data-btn="Fairy"]{
   bottom: 125%;
   left: 50%;
   margin-left: -40px;
+  font-family: "Signika";
 }
 
 .mother-types-weakness button .btn-hover::after {
