@@ -20,7 +20,7 @@ function pokeUnit(poke) {
     <img data-num=${poke.num} class="poke-img" src="${poke.img}"/>
     <div data-num=${poke.num} class= "poke-namenum">
     <div class="poke-shadow"></div>
-      <p data-num=${poke.num} class="poke-num"> Nº ${poke.num}</p>
+      <p data-num=${poke.num} class="poke-num"> Nº ${poke.num} </p>
       <h3 data-num=${poke.num} class="poke-name">${poke.name}</h3>
     </div> 
   </div>
