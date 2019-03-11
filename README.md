@@ -17,7 +17,8 @@ os dados, filtrá-los, ordená-los e acessar estatísticas relevantes.
 nos contando como foi seu processo de desenvolvimento do projeto e como
 acredita que seu produto resolve o problema (os problemas) do seu usuário. -->
 
-###Definição da Persona
+### Definição da Persona
+
 <!-- persona -->
 
 #### Protótipo
