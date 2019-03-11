@@ -81,20 +81,6 @@ ul{
   padding: 40px 30px;;
   margin: 30px;
 }
-.sec-modal{
-  display: none;
-}
-.div-modal{
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vw;
-  width: 100vw;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
 .title-name{
   font-family: 'Signika', sans-serif;
   font-size: 50px;
@@ -151,10 +137,22 @@ ul{
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
 }
+.div-modal{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vw;
+  width: 100vw;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  background: url(../assets/images/whiteandgrey.png);
+}
 .modal-content{
   background-color: white;
   padding: 10%;
-  width: 80%;
+  width: 60%;
   padding: 20px;
 }
 .title-name{
@@ -175,7 +173,7 @@ ul{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(../assets/images/whiteandgrey.png);
+  background: url(../assets/images/background.gif);
   border-radius: 10px;
   width: 300px;
   height: inherit;
@@ -192,8 +190,20 @@ ul{
   background-color: beige;
   border-radius: 10px;
   width: 300px;
-  margin: 10px;
+  margin: 0px;
   padding: 10px 0 10px 0;
+}
+.poke-description .poke-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../assets/images/whiteandgrey.png);
+  border-radius: 10px;
+  width: 300px;
+  height: inherit;
+  margin: 10px;
+  padding: 10px 0 0 0;
+  image-resolution: 300px;
 }
 .types-weak{
   display: flex;
@@ -204,7 +214,7 @@ ul{
   background-color: beige;
   border-radius: 10px;
   width: 260px;
-  margin: 10px;
+  margin: 0px;
   padding: 10px 0 10px 40px;
 }
 .subtitlesM{
@@ -218,6 +228,7 @@ ul{
 }
 .sec-evol{
   text-align: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
   background-color: beige;
@@ -231,6 +242,9 @@ ul{
   display: flex;
   flex-direction: column;
   border-radius: 5%; 
+  margin: 0;
+  padding: 10px;
+  background: transparent;
 }
 .sec-evol .pokemon-unit .poke-img{
   width: 100px;
