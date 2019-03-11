@@ -167,7 +167,11 @@ for (let btn of document.querySelectorAll('.icon-h-w')) {
 stats.addEventListener("click", getTypes)
 stats.addEventListener("click", getHeight)
 stats.addEventListener("click", getWeight)
+
+stats.addEventListener("click", getTypes)
+
 stats.addEventListener("click", getCandy)
+
 
 function getTypes() {
   clearScreen('.list-poke');
