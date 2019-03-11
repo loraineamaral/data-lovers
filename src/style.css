@@ -1,3 +1,4 @@
+
 body{
   margin: 0;
   padding: 0;
@@ -10,16 +11,18 @@ ul{
 }
 img {
   width: 70%;
+  height: auto;
 }
 .black-bar{
-  background-color: black;
+  background-color: #08224E;
   height: 100px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: fixed;
-  padding-bottom: 10px;
+  padding: 1% 0;
+  z-index: 1;
  }
  .home-btn{
    background-color: black;
@@ -38,13 +41,16 @@ img {
    color: white;
 }
 .logo-image{
-  width: 10%;
+  height:inherit;
+  width: auto;
 }
 
 .filter-buttons{
   display: flex; 
+  width: 100vw;
+  padding: 130px 0 50px 0;
   background-color: lightblue;
-  padding: 120px 35px 45px 35px;
+  justify-content: center;
   }
 
  .types-weakness{
@@ -63,7 +69,6 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  z-index: 2;
 }
 .pokemon-unit{
   border: 1px solid transparent;
@@ -87,7 +92,6 @@ img {
   display: flex;
   justify-content: center;
   position: fixed;
-  z-index: 1;
   left: 0;
   top: 0;
   height: 100vw;
@@ -143,7 +147,7 @@ img {
 .sec-modal{
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   height: 100vw;
@@ -207,7 +211,7 @@ img {
   margin: 10px;
   padding: 10px 0 10px 40px;
 }
-.div-weak{
+.div-weakness{
   background-color: beige;
   border-radius: 10px;
   width: 260px;
@@ -225,4 +229,10 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+.close{
+  text-align: end;
+  font-family: 'Signika', sans-serif;
+  font-size: 30px;
+  margin: 0 5% 0 0;
 }

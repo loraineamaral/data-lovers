@@ -17,8 +17,7 @@ os dados, filtrá-los, ordená-los e acessar estatísticas relevantes.
 nos contando como foi seu processo de desenvolvimento do projeto e como
 acredita que seu produto resolve o problema (os problemas) do seu usuário. -->
 
-### Definição da Persona
-
+###Definição da Persona
 <!-- persona -->
 
 #### Protótipo
@@ -28,8 +27,6 @@ Abaixo estão os protótipos de uma possível página principal e modal
 que traz informações específicas sobre cada Pokémon.
 
 ![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/Prot%C3%B3tipo-papel-1.jpg)
-
-![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/Prot%C3%B3tiopo-papel-2.jpg)
 
 Depois, foi também desenvolvido um protótipo de média fidelidade usando o Marvel:
 <!-- link do marvel aqui -->
