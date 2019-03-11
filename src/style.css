@@ -205,7 +205,6 @@ ul{
   height: inherit;
   margin: 10px;
   padding: 10px 0 0 0;
-  image-resolution: 300px;
 }
 .description{
   width: 300px;
@@ -219,7 +218,7 @@ ul{
   margin: 0px;
   padding: 10px 0 10px 0;
 }
-.poke-description .poke-img{
+.types-weak .poke-img{
   display: flex;
   align-items: center;
   justify-content: center;
