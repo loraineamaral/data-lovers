@@ -365,3 +365,22 @@ function getCandy() {
    </ul>
   `
 }
+
+function hoverIcons(btnHover){
+
+for (button of btnHover) {
+  let btnData = button.getAttribute("data-btn")
+    button.innerHTML +=
+    `       
+    <span class="btn-hover">${btnData}</span>
+    `
+    }
+
+  }
+
+  hoverIcons(btnType)
+  hoverIcons(btnWeak)
+
+
+        
+   
