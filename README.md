@@ -28,8 +28,6 @@ que traz informações específicas sobre cada Pokémon.
 
 ![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/Prot%C3%B3tipo-papel-1.jpg)
 
-![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/Prot%C3%B3tiopo-papel-2.jpg)
-
 Depois, foi também desenvolvido um protótipo de média fidelidade usando o Marvel:
 <!-- link do marvel aqui -->
 

@@ -68,7 +68,7 @@ function filterPokeWeak(btnId) {
   showModal('.poke-namenum')
 }
 
-function filterType(){
+function filterType() {
   for (button of btnType) {
     let btnId = button.getAttribute("data-btn")
     button.addEventListener('click', () => {
@@ -369,3 +369,71 @@ function getCandy() {
    </ul>
   `
 }
+function showModal(classPokes) {
+  const pokesClass = document.querySelectorAll(classPokes)
+  for (let oneClass of pokesClass) {
+    oneClass.addEventListener('click', function (event) {
+      const dataNum = event.target.getAttribute("data-num")
+      const secEvol = document.getElementsByClassName('sec-evol')
+      getPokes.filter((elem) => {
+        if (dataNum === elem.num) {
+          document.getElementById('sec-modal').style.display = "block";
+          document.getElementsByClassName('title-name').innerHTML = elem.name;
+          document.getElementById('photo-poke').innerHTML = `
+        <img src="${elem.img}"/>
+        `
+          document.getElementsByClassName('poke-description').innerHTML = `
+        <ul>
+        <li>N° ${elem.num}</li>
+        <li>Altura: ${elem.height}</li>
+        <li>Peso: ${elem.weight}</li>
+        <li>${elem.candy}</li>
+        </ul>
+        `
+          elem.weaknesses.filter((typ) => {
+            for (let btn of btnWeak) {
+              if (typ === btn.id) {
+                document.getElementsByClassName('div-weak').innerHTML += btn.outerHTML
+              }
+            }
+          }
+          )
+          elem.type.filter((typ) => {
+            for (let btn of btnType) {
+              if (typ === btn.id) {
+                document.getElementsByClassName('div-types').innerHTML += btn.outerHTML
+              }
+            }
+          }
+          )
+          if (elem.hasOwnProperty('prev_evolution') === true) {
+            elem.prev_evolution.filter((evol) => {
+              getPokes.filter((elem) => {
+                if (evol.num === elem.num) {
+                  secEvol.innerHTML += pokeUnit(elem)
+                }
+              }
+              )
+            }
+            )
+          } if (elem.hasOwnProperty('next_evolution') === true) {
+            elem.next_evolution.filter((evol) => {
+              getPokes.filter((elem) => {
+                if (evol.num === elem.num) {
+                  secEvol.innerHTML += pokeUnit(elem)
+                }
+              }
+              )
+            }
+            )
+          }
+        }
+      }
+      )
+    }
+    )
+  }
+}
+document.getElementById('close-sec').addEventListener('click', () =>
+  document.getElementById('sec-modal').style.display = "none"
+)
