@@ -248,24 +248,24 @@ function getTypes() {
   function drawChart() {
     let data = google.visualization.arrayToDataTable([
       ["Tipo", "Quantidade", { role: "style" }],
-      ["Normal", contNormal, "black",],
-      ["Fire", contFire, "red"],
-      ["Water", contWater, "#54e5ca"],
-      ["Electric", contElectric, "#fca002"],
-      ["Grass", contGrass, "#01fc6a"],
-      ["Ice", contIce, "#336a8c"],
-      ["Poison", contPoison, "#680c7f"],
-      ["Ground", contGround, "#664617"],
-      ["Fighting", contFighting, "#c11313"],
-      ["Flying", contFlying, "#133ac6"],
-      ["Psychic", contPsychic, "#d154e"],
-      ["Bug", contBug, "##b7e554"],
-      ["Rock", contRock, "#949989"],
-      ["Ghost", contGhost, "#c8abcc"],
-      ["Dragon", contDragon, "#f97b04"],
-      ["Dark", contDark, "#120e84"],
-      ["Steel", contSteel, "#8989a3"],
-      ["Fairy", contFairy, "deeppink"]
+      ["Normal", contNormal, "#A4ACAF",],
+      ["Fire", contFire, "#FB7D33"],
+      ["Water", contWater, "#19A6F4"],
+      ["Electric", contElectric, "#EDD346"],
+      ["Grass", contGrass, "#9CCA58"],
+      ["Ice", contIce, "#57C4E5"],
+      ["Poison", contPoison, "#B881C7"],
+      ["Ground", contGround, "#63491A"],
+      ["Fighting", contFighting, "#CE5824"],
+      ["Flying", contFlying, "#AEEDFC"],
+      ["Psychic", contPsychic, "#F169B8"],
+      ["Bug", contBug, "#739E45"],
+      ["Rock", contRock, "#5B563F"],
+      ["Ghost", contGhost, "#674A9E"],
+      ["Dragon", contDragon, "#EF6F5C"],
+      ["Dark", contDark, "#484849"],
+      ["Steel", contSteel, "#90AFAF"],
+      ["Fairy", contFairy, "#FCBAE8"]
     ]
     );
 
@@ -276,17 +276,24 @@ function getTypes() {
         sourceColumn: 1,
         type: "string",
         role: "none"
-      },
+        },
       2]
     )
 
     var options = {
       title: "Tipos de Pokemons",
-      width: 800,
+      titleTextStyle: { fontSize: 20},
+      
+      width: 1000,
       height: 400,
-      bar: { groupWidth: "90%" },
+      backgroundColor: "white",
+      fontName: 'Signika',
+      bar: { groupWidth: "80%" },
       legend: { position: "none" },
-    }
+      hAxis: { fontSize: 9,
+               slantedText: "true" }    
+          };
+
     var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
     chart.draw(view, options);
   }
@@ -358,3 +365,22 @@ function getCandy() {
    </ul>
   `
 }
+
+function hoverIcons(btnHover){
+
+for (button of btnHover) {
+  let btnData = button.getAttribute("data-btn")
+    button.innerHTML +=
+    `       
+    <span class="btn-hover">${btnData}</span>
+    `
+    }
+
+  }
+
+  hoverIcons(btnType)
+  hoverIcons(btnWeak)
+
+
+        
+   

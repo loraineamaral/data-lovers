@@ -26,10 +26,10 @@ Primeiramente foram desenvolvidos protótipos simples em papel.
 Abaixo estão os protótipos de uma possível página principal e modal 
 que traz informações específicas sobre cada Pokémon.
 
-![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/Prot%C3%B3tipo-papel-1.jpg)
+![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/Prot%C3%B3tipo-papel-1.png)
 
 Depois, foi também desenvolvido um protótipo de média fidelidade usando o Marvel:
-<!-- link do marvel aqui -->
+https://marvelapp.com/6c733if
 
 #### Testes de usabilidade
 
