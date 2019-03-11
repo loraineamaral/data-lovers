@@ -9,7 +9,6 @@
 
 .chart-types{
   font-family: 'Signika', sans-serif;
-  background-color: white;
   margin-top: 20px;
   border-radius: 20px;
   z-index: 0;
@@ -30,6 +29,7 @@
   background: url(../assets/images/whiteandgrey.png);
   padding: 0 30px 20px 30px;
   border-radius: 20px;
+  background-color: white;
 }
 .title-stats{
   text-align: center;
