@@ -43,7 +43,7 @@ function showModal(classPokes) {
 						elem.prev_evolution.filter((evol) => {
 							getPokes.filter((element) => {
 								if (evol.num === element.num) {
-									document.querySelector('.sec-evol').innerHTML += pokeUnit(element)
+									document.querySelector('.sec-evol').innerHTML += `${pokeUnit(element)}<i class="fas fa-arrow-alt-circle-left"></i>`
 								}
 							}
 							)
@@ -52,9 +52,9 @@ function showModal(classPokes) {
 							document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
 					} if (elem.hasOwnProperty('next_evolution') === true) {
 						elem.next_evolution.filter((evol) => {
-							getPokes.filter((elem) => {
-								if (evol.num === elem.num) {
-									document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
+							getPokes.filter((element) => {
+								if (evol.num === element.num) {
+									document.querySelector('.sec-evol').innerHTML += `<i class="fas fa-arrow-alt-circle-right"></i> ${pokeUnit(elem)} `
 								}
 							}
 							)
@@ -72,3 +72,11 @@ function showModal(classPokes) {
 document.getElementById('close-sec').addEventListener('click', () =>
 	document.getElementById('sec-modal').style.display = "none"
 )
+
+function showCandy(poke){
+	`
+	<div class="div-arrow">
+	${poke.candy_count}
+	</div>
+	`
+}
