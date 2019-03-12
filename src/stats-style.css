@@ -3,7 +3,6 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background: url(../assets/images/whiteandgrey.png);
   padding-top: 200px;
   
 }
@@ -57,5 +56,6 @@
   width: 30%;
   height: 200px;
   border-radius: 20px;
+  background-color: white;
 }
 

@@ -177,7 +177,6 @@ function getStats() {
 
   let chooseStats = document.getElementById("stats-menu")
   chooseStats.innerHTML = `
- 
   <img src="../assets/images/pikachu.png"  alt="picachugif" class="pika-img"/>
         <div class="stats-btn2">
         <button id="type-chart">Tipos</button>

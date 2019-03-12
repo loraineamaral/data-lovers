@@ -67,7 +67,7 @@ button{
   display: flex; 
   width: 100vw;
   padding: 130px 0 50px 0;
-  background-color: lightblue;
+  background-color:#e8effc;
   justify-content: flex-end;
   }
 
@@ -146,6 +146,7 @@ button{
   appearance: none;
   background: url(../assets/images/arrowdown.png.png) no-repeat 96% 0;
   overflow: hidden;
+  background-color: white;
   width: 200px;
   height: 30px;
 }
@@ -156,6 +157,3 @@ button{
   color: #333333;
 }
 
-.show-poke{
-  background: url(../assets/images/whiteandgrey.png);
-}
