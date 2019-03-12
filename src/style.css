@@ -15,8 +15,6 @@ button{
   display: inline-block;
 }
 .poke-img {
-  display: flex;
-  align-items: flex-end;
   width: 100%;
   height: auto;
 }
@@ -41,19 +39,23 @@ button{
  }
  .home-btn{
    background-color: #08224E;
-   border-radius: 5px;
-   border: 1px solid yellow;
+   border-radius: 15px;
+   border: 2px solid yellow;
    font-family: 'Signika', sans-serif;
    font-size: 20px;
+   padding: 10px 0;
+   width: 150px;
    color: white;
  }
 .stats-btn{
   background-color: #08224E;
-   border-radius: 5px;
-   border: 1px solid yellow;
+   border-radius:  15px;
+   border: 2px solid yellow;
    font-family: 'Signika', sans-serif;
    font-size: 20px;
    color: white;
+   padding: 10px 0;
+   width: 150px;
 }
 .logo-image{
   height:inherit;
