@@ -4,7 +4,7 @@ window.onload = function () {
   showModal('.poke-namenum')
   hoverIcons(btnType)
   hoverIcons(btnWeak)
-  
+
 }
 
 const btnType = document.getElementsByClassName('btn-types');
@@ -168,35 +168,32 @@ for (let btn of document.querySelectorAll('.icon-h-w')) {
 
 document.getElementById("stats-btn").addEventListener("click", getStats)
 
-function getStats(){
-console.log("passou")
+function getStats() {
+
+  clearScreen('.list-poke')
+  clearScreen('#filter-buttons')
+  clearScreen('#show-poke')
+  document.getElementById("filter-buttons").style.display = "none"
 
   let chooseStats = document.getElementById("stats-menu")
   chooseStats.innerHTML = `
-  <div class="stats-menu">
-  <img src="../assets/images/picachu.png"  alt="picachugif" class="pika-img"/>  
+ 
+  <img src="../assets/images/pikachu.png"  alt="picachugif" class="pika-img"/>
+        <div class="stats-btn2">
         <button id="type-chart">Tipos</button>
         <button id="stats-h">Altura</button>
         <button id="stats-w">Peso</button>
         <button id="stats-c">Candy</button>
-   </div>
+        </div>
    `
-}
-
-
-
-// stats.addEventListener("click", getTypes)
-// stats.addEventListener("click", getHeight)
-// stats.addEventListener("click", getWeight)
-// stats.addEventListener("click", getCandy)
-
-
+   document.getElementById("type-chart").addEventListener("click", getTypes)
+   document.getElementById("stats-h").addEventListener("click", getHeight)
+   document.getElementById("stats-w").addEventListener("click", getWeight)
+   document.getElementById("stats-c").addEventListener("click", getCandy) 
+  }
 
 function getTypes() {
-  clearScreen('.list-poke')
-  clearScreen('#filter-buttons')
-  clearScreen('#show-poke')
-
+ 
   let typesArray = [];
   let contNormal = 0;
   let contFire = 0;
@@ -307,7 +304,7 @@ function getTypes() {
       title: "Tipos de Pokemons",
       titleTextStyle: { fontSize: 20 },
 
-      width: 1000,
+      width: 900,
       height: 400,
       backgroundColor: "white",
       fontName: 'Signika',
@@ -319,7 +316,7 @@ function getTypes() {
       }
     };
 
-    var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+    var chart = new google.visualization.ColumnChart(document.getElementById("stats"));
     chart.draw(view, options);
   }
 }
@@ -335,7 +332,7 @@ function getHeight() {
   let maxHeight = Math.max.apply(null, heigthArray);
   let minHeight = Math.min.apply(null, heigthArray);
 
-  let pokeDivHeight = document.getElementById("height-stats")
+  let pokeDivHeight = document.getElementById("stats")
   pokeDivHeight.innerHTML = `
      <ul class= "hwc-stats">
        <p class="title-stats">ALTURA</p>
@@ -356,7 +353,7 @@ function getWeight() {
   let maxWeight = Math.max.apply(null, weightArray);
   let minWeight = Math.min.apply(null, weightArray);
 
-  let pokeDivWeight = document.getElementById("weight-stats")
+  let pokeDivWeight = document.getElementById("stats")
   pokeDivWeight.innerHTML = `
      <ul class= "hwc-stats">
        <p class="title-stats">PESO</p>
@@ -380,7 +377,7 @@ function getCandy() {
   let maxCandy = Math.max.apply(null, candyArray);
   let minCandy = Math.min.apply(null, candyArray);
 
-  let pokeDivCandy = document.getElementById("candy-stats")
+  let pokeDivCandy = document.getElementById("stats")
   pokeDivCandy.innerHTML = `
   <ul class= "hwc-stats">
     <p class="title-stats">CANDY</p>

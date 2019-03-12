@@ -1,48 +1,61 @@
-.charts{
-  background-color: lightblue;
+.stats-section{
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background: url(../assets/images/whiteandgrey.png);
+  padding-top: 200px;
+  
+}
+.stats-menu{
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  width: 20%;
+  height: 200px;
+  background-color: white;
+  
+}
+.stats-btn2{
+  width: 50%;  
+ 
+}
+
+.stats-btn2 button{
+   background-color: #ed1c24;
+   border-radius:  13px;
+   border: 2px solid transparent;
+   font-family: 'Signika', sans-serif;
+   font-size: 15px;
+   color: white;
+   margin: 2px;
+   width: 80px;
+   padding: 5px;
+}
+
+.pika-img{
+  padding: 20px;
+  width: 50%;
+  height: 60%;
+  border-radius: 100%;
+}
+
+.stats-show{
+  background-color: transparent;
+  width: 60%;
 }
 
 .chart-types{
   font-family: 'Signika', sans-serif;
-  border-radius: 20px;
-  padding: 10px ;
   z-index: 0;
-  
-}
-.chart-back{
-  background-color: white;
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row-reverse;
-  align-items: center;
-  border-radius: 20px;
-}
-.pika-img{
-  margin-right: 20px;
-  border-radius: 50%;
-}
-
-.stats{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  background-color: lightblue;
-  padding-top: 20px;
 }
 
 .hwc-stats{
-  border: 1px solid transparent;
+  border: 1px solid lightgray;
   font-family: 'Signika', sans-serif;
-  width: 90%;
-  background: url(../assets/images/whiteandgrey.png);
-  padding: 0 30px 20px 30px;
-  border-radius: 20px;
-  background-color: white;
-}
-.title-stats{
-  text-align: center;
+  width: 30%;
+  height: 200px;
   border-radius: 20px;
 }
+
