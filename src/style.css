@@ -9,10 +9,23 @@ ul{
   font-size: 20px;
   text-align: left;
 }
+button{
+  outline: none;
+  position: relative;
+  display: inline-block;
+}
 .poke-img {
   width: 100%;
   height: auto;
 }
+.poke-shadow{
+  background-color: lightgray;
+  height: 18%; 
+  width: 60%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-left: 20px; 
+ }
 .black-bar{
   background-color: #08224E;
   height: 100px;
@@ -26,19 +39,23 @@ ul{
  }
  .home-btn{
    background-color: #08224E;
-   border-radius: 5px;
-   border: 1px solid yellow;
+   border-radius: 15px;
+   border: 2px solid yellow;
    font-family: 'Signika', sans-serif;
    font-size: 20px;
+   padding: 10px 0;
+   width: 150px;
    color: white;
  }
 .stats-btn{
   background-color: #08224E;
-   border-radius: 5px;
-   border: 1px solid yellow;
+   border-radius:  15px;
+   border: 2px solid yellow;
    font-family: 'Signika', sans-serif;
    font-size: 20px;
    color: white;
+   padding: 10px 0;
+   width: 150px;
 }
 .logo-image{
   height:inherit;
@@ -84,15 +101,10 @@ ul{
 .poke-name{
   font-family: 'Signika', sans-serif;
   font-size: 20px;
+  color:#333333;
+  margin: 0;
 }
-.poke-shadow{
- background-color: lightgray;
- height: 18%; 
- width: 60%;
- border-radius: 50%;
- margin-bottom: 10px;
- margin-left: 20px; 
-}
+
 .sec-modal{
   display: none;
 }
@@ -107,6 +119,7 @@ ul{
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
 }
+
 .title-name{
   font-family: 'Signika', sans-serif;
   font-size: 50px;
@@ -114,22 +127,21 @@ ul{
   text-align: left;
   background-color: #e5e4d0;
 }
+
 .poke-num{
   font-family: 'Signika', sans-serif;
   font-size: 13px;
   margin: 0;
+  color: #333333;
 }
-.poke-name{
-  font-family: 'Signika', sans-serif;
-  font-size: 20px;
-  margin: 0;
-}
+
 .order-menu{
   display: flex;
   justify-content: flex-end;
   padding: 30px 80px 0 0;
   background-color:white;
 }
+
 .menu-select{
   font-family: 'Signika', sans-serif;
   font-size: 15px;
@@ -145,141 +157,13 @@ ul{
   width: 200px;
   height: 30px;
 }
+
 .text-style{
   font-family: 'Signika', sans-serif;
   font-size: 20px;
+  color: #333333;
 }
+
 .show-poke{
   background-color: white;
-}
-.sec-modal{
-  display: none;
-  position: fixed;
-  z-index: 2;
-  left: 0;
-  top: 0;
-  height: 100vw;
-  width: 100vw;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
-.div-modal{
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vw;
-  width: 100vw;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-  background: url(../assets/images/whiteandgrey.png);
-}
-.modal-content{
-  background-color: white;
-  padding: 10%;
-  width: 60%;
-  padding: 20px;
-}
-.title-name{
-  font-family: 'Signika', sans-serif;
-  font-size: 40px;
-}
-.subtitles{
-  font-family: 'Signika', sans-serif;
-  font-size: 20px;
-}
-.pic-description{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-#photo-poke{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url(../assets/images/background.gif);
-  border-radius: 10px;
-  width: 300px;
-  height: inherit;
-  margin: 10px;
-  padding: 10px 0 0 0;
-}
-.description{
-  width: 300px;
-}
-.poke-description{
-  display: flex;
-  flex-direction: row;
-  background-color: beige;
-  border-radius: 10px;
-  width: 300px;
-  margin: 0px;
-  padding: 10px 0 10px 0;
-}
-.types-weak .poke-img{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url(../assets/images/whiteandgrey.png);
-  border-radius: 10px;
-  width: 300px;
-  height: inherit;
-  margin: 10px;
-  padding: 10px 0 0 0;
-  image-resolution: 300px;
-}
-.types-weak{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  text-align: left;
-  background-color: beige;
-  border-radius: 10px;
-  width: 260px;
-  margin: 0px;
-  padding: 10px 0 10px 40px;
-}
-.subtitlesM{
-  font-family: 'Signika', sans-serif;
-  font-size: 30px;
-  margin: 0;
-}
-.mother-evol{
-  display: flex;
-  flex-direction: column;
-}
-.sec-evol{
-  text-align: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  background-color: beige;
-  border-radius: 10px;
-  width: 260px;
-  margin: 10px;
-}
-.sec-evol .pokemon-unit{
-  border: 1px solid transparent;
-  width: 100px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5%; 
-  margin: 0;
-  padding: 10px;
-  background: transparent;
-}
-.sec-evol .pokemon-unit .poke-img{
-  width: 100px;
-  height: 100px;
-  margin: 0;
-  padding: 0;
-}
-.close{
-  text-align: end;
-  font-family: 'Signika', sans-serif;
-  font-size: 30px;
-  margin: 0 5% 0 0;
 }

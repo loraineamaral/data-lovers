@@ -29,7 +29,7 @@ function showModal(classPokes) {
 						}
 					}
 					)
-					
+
 					elem.weaknesses.filter((typ) => {
 						for (let btn of document.querySelectorAll('.btn-weaks')) {
 							if (typ === btn.getAttribute('data-btn')) {
@@ -41,21 +41,20 @@ function showModal(classPokes) {
 
 					if (elem.hasOwnProperty('prev_evolution') === true) {
 						elem.prev_evolution.filter((evol) => {
-							getPokes.filter((elem) => {
-								if (evol.num === elem.num) {
-									document.querySelector('.sec-evol').innerHTML += `<h2 class="subtitles">Pré-evolução</h2> ${pokeUnit(elem)}`
-									pokeUnit(elem)
+							getPokes.filter((element) => {
+								if (evol.num === element.num) {
+									document.querySelector('.sec-evol').innerHTML += pokeUnit(element)
 								}
 							}
 							)
 						}
-						)
+						),
+							document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
 					} if (elem.hasOwnProperty('next_evolution') === true) {
 						elem.next_evolution.filter((evol) => {
 							getPokes.filter((elem) => {
 								if (evol.num === elem.num) {
-									document.querySelector('.sec-evol').innerHTML += `<h2 class="subtitles">Evolução</h2> ${pokeUnit(elem)}`
-
+									document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
 								}
 							}
 							)
