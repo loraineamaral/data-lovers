@@ -4,7 +4,6 @@ window.onload = function () {
   showModal('.poke-namenum')
   hoverIcons(btnType)
   hoverIcons(btnWeak)
-
 }
 
 const btnType = document.getElementsByClassName('btn-types');
@@ -101,7 +100,6 @@ function sortPoke(ka) {
     namePoke.reverse();
   }
   clearScreen('.list-poke');
-
   for (let i of namePoke) {
     for (let j in getPokes) {
       let nameData = getPokes[j].name;
@@ -112,8 +110,6 @@ function sortPoke(ka) {
     }
   }
 }
-
-
 for (let btn of document.querySelectorAll('.icon-h-w')) {
   btn.addEventListener('click', function () {
     clearScreen('.list-poke')
@@ -218,9 +214,9 @@ function getTypes() {
     if (typeof elem.type[1] === "string") {
       typesArray.push(elem.type[1])
     }
-
   }
   )
+  
   typesArray.filter((elem) => {
     if (elem === "Normal") {
       contNormal += 1;
@@ -326,10 +322,10 @@ function getHeight() {
     heigthArray.push(elem.height.replace(" m", ""))
   }
   )
-  let sumHeight = heigthArray.reduce((a, b) => parseFloat(a) + parseFloat(b));
-  let avgHeight = (sumHeight / heigthArray.length).toFixed(2);
-  let maxHeight = Math.max.apply(null, heigthArray);
-  let minHeight = Math.min.apply(null, heigthArray);
+  let sumHeight = heigthArray.reduce((a, b) => parseFloat(a) + parseFloat(b))
+  let avgHeight = (sumHeight / heigthArray.length).toFixed(2)
+  let maxHeight = Math.max.apply(null, heigthArray)
+  let minHeight = Math.min.apply(null, heigthArray)
 
   let pokeDivHeight = document.getElementById("stats")
   pokeDivHeight.innerHTML = `
@@ -340,6 +336,30 @@ function getHeight() {
           <li>Altura Mínima: ${minHeight} m</li>
       </ul>
      `
+}
+
+function getCandy() {
+  let candyArray = [];
+  getPokes.filter((elem) => {
+    if (typeof elem.candy_count === "number") {
+      candyArray.push(elem.candy_count)
+    }
+  }
+  )
+  let candySum = candyArray.reduce((a, b) => a + b)
+  let avgCandy = candySum / candyArray.length
+  let maxCandy = Math.max.apply(null, candyArray)
+  let minCandy = Math.min.apply(null, candyArray)
+  let pokeDivCandy = document.getElementById("stats")
+
+  pokeDivCandy.innerHTML = `
+  <ul class= "hwc-stats">
+    <p class="title-stats">CANDY</p>
+       <li></i>Candy Médio: ${avgCandy}</li>
+       <li></i>Candy Máximo: ${maxCandy}</li>
+       <li></i>Candy Mínimo: ${minCandy}</li>
+   </ul>
+  `
 }
 
 function getWeight() {
@@ -361,30 +381,6 @@ function getWeight() {
           <li>Peso Mínimo: ${minWeight} kg</li>
       </ul>
      `
-}
-
-function getCandy() {
-  let candyArray = [];
-  getPokes.filter((elem) => {
-    if (typeof elem.candy_count === "number") {
-      candyArray.push(elem.candy_count)
-    }
-  }
-  )
-  let candySum = candyArray.reduce((a, b) => a + b);
-  let avgCandy = candySum / candyArray.length;
-  let maxCandy = Math.max.apply(null, candyArray);
-  let minCandy = Math.min.apply(null, candyArray);
-
-  let pokeDivCandy = document.getElementById("stats")
-  pokeDivCandy.innerHTML = `
-  <ul class= "hwc-stats">
-    <p class="title-stats">CANDY</p>
-       <li></i>Candy Médio: ${avgCandy}</li>
-       <li></i>Candy Máximo: ${maxCandy}</li>
-       <li></i>Candy Mínimo: ${minCandy}</li>
-   </ul>
-  `
 }
 
 function hoverIcons(btnHover) {

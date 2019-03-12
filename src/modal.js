@@ -49,7 +49,9 @@ function showModal(classPokes) {
 									document.querySelector('.sec-evol').innerHTML += 
 									`
 									${pokeUnit(element)}
-									<div class="arrow" data-balloon="${elem.candy_count} ${element.candy}" data-balloon-pos="up">
+									<div class="arrow">
+									<div class="candyCount">${element.candy_count}</div>
+									<div class="candyPoke">${element.candy}</div>
 									<i class="fas fa-arrow-right"></i>
 									</div>`
 								}
@@ -67,7 +69,9 @@ function showModal(classPokes) {
 								if (evol.num === element.num) {
 									document.querySelector('.sec-evol').innerHTML += 
 									`
-									<div class="arrow" id="arrow" data-balloon="${element.candy_count} ${element.candy}" data-balloon-pos="up">
+									<div class="arrow">
+									<div class="candyCount">${elem.candy_count}</div>
+									<div class="candyPoke">${element.candy}</div>
 									<i class="fas fa-arrow-right"></i></div>
 									${pokeUnit(element)}
 									`
