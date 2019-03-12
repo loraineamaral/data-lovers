@@ -343,27 +343,6 @@ function getHeight() {
      `
 }
 
-function getWeight() {
-  let weightArray = [];
-  getPokes.filter((elem) => {
-    weightArray.push(elem.weight.replace(" kg", ""))
-  })
-  let sumWeight = weightArray.reduce((a, b) => parseFloat(a) + parseFloat(b));
-  let avgWeight = (sumWeight / weightArray.length).toFixed(2);
-  let maxWeight = Math.max.apply(null, weightArray);
-  let minWeight = Math.min.apply(null, weightArray);
-
-  let pokeDivWeight = document.getElementById("stats")
-  pokeDivWeight.innerHTML = `
-     <ul class= "hwc-stats">
-       <p class="title-stats">PESO</p>
-          <li>Peso Médio: ${avgWeight} kg</li>
-          <li>Peso Máximo: ${maxWeight} kg</li>
-          <li>Peso Mínimo: ${minWeight} kg</li>
-      </ul>
-     `
-}
-
 function getCandy() {
   let candyArray = [];
   getPokes.filter((elem) => {
@@ -386,6 +365,27 @@ function getCandy() {
        <li></i>Candy Mínimo: ${minCandy}</li>
    </ul>
   `
+}
+
+function getWeight() {
+  let weightArray = [];
+  getPokes.filter((elem) => {
+    weightArray.push(elem.weight.replace(" kg", ""))
+  })
+  let sumWeight = weightArray.reduce((a, b) => parseFloat(a) + parseFloat(b));
+  let avgWeight = (sumWeight / weightArray.length).toFixed(2);
+  let maxWeight = Math.max.apply(null, weightArray);
+  let minWeight = Math.min.apply(null, weightArray);
+
+  let pokeDivWeight = document.getElementById("stats")
+  pokeDivWeight.innerHTML = `
+     <ul class= "hwc-stats">
+       <p class="title-stats">PESO</p>
+          <li>Peso Médio: ${avgWeight} kg</li>
+          <li>Peso Máximo: ${maxWeight} kg</li>
+          <li>Peso Mínimo: ${minWeight} kg</li>
+      </ul>
+     `
 }
 
 function hoverIcons(btnHover) {
