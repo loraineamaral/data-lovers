@@ -13,8 +13,14 @@
   padding: 8px 0px 8px 0px;
   font-size: 18px;
   margin: 0.5%;
-  
+  color: white;
 }
+
+.btn-types:hover {
+  background-color: white;
+  color: #666666;
+}
+
 .btn-weaks{
   border: none;
   border-radius: 50%;
@@ -22,11 +28,13 @@
   padding: 8px 0px 8px 0px;
   font-size: 18px;
   margin: 0.5%;
+  color: white;
+}
+.btn-weaks:hover {
+  background-color: white;
+  color: #666666;
 }
 
-.btn-types:hover {
-  background-color: white;
-}
 button[data-btn="Normal"]{
   background-color: #A4ACAF;
 }
@@ -81,16 +89,19 @@ button[data-btn="Steel"]{
 button[data-btn="Fairy"]{
   background-color: #FCBAE8;
 }
+
 .height-weigth{
   display: flex;
   flex-direction: column;
   margin: 0 5%;
 }
+
 .icons-h-w{
   display: flex;
   align-items: center;
   height: 60px;
 }
+
 .icon-h-w{
   border: none;
   border-radius: 30%;
@@ -98,19 +109,37 @@ button[data-btn="Fairy"]{
   height: 60px;
   padding: 15px;
   font-size: 15px;
-  background-color: #ede971;
   margin: 1%;
+  background-color: #EDDE20;
+  color: white;
 }
-
-.mother-types-weakness button {
-  position: relative;
-  display: inline-block;
-  }
-
-.mother-types-weakness button .btn-hover{
+.icon-h-w:hover{
+  background-color: #ede971;
+  color: #666666;
+}
+.icon-h-w .btn-hover{
   visibility: hidden;
   width: 80px;
-  background-color: lightgrey;
+  background-color: #EFEFEF;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 0;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -40px;
+}
+
+.icon-h-w:hover .btn-hover {
+  visibility: visible;
+}
+
+button .btn-hover{
+  visibility: hidden;
+  width: 80px;
+  background-color: #EFEFEF;
   color: black;
   text-align: center;
   border-radius: 6px;
@@ -123,7 +152,14 @@ button[data-btn="Fairy"]{
   font-family: "Signika";
 }
 
-.mother-types-weakness button .btn-hover::after {
+.btn-hover{
+  font-family: 'Signika', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  z-index: 0;
+}
+
+.btn-hover::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -131,9 +167,11 @@ button[data-btn="Fairy"]{
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: lightgrey transparent transparent transparent;
+  border-color:#EFEFEF transparent transparent transparent;
+  z-index: 0;
 }
 
-.mother-types-weakness button:hover .btn-hover {
+button:hover .btn-hover {
   visibility: visible;
+  z-index: 0;
 }
