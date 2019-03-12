@@ -2,6 +2,9 @@ window.onload = function () {
   showPokemons(getPokes)
   showModal('.poke-img')
   showModal('.poke-namenum')
+  hoverIcons(btnType)
+  hoverIcons(btnWeak)
+  
 }
 
 const btnType = document.getElementsByClassName('btn-types');
@@ -67,14 +70,14 @@ function filterPokeWeak(btnId) {
   showModal('.poke-namenum')
 }
 
-  for (button of btnType) {
-    let btnData = button.getAttribute("data-btn")
-    button.addEventListener('click', () => {
-      document.getElementById("list-poke").innerHTML = "";
-      filterPokeType(btnData)
-    }
-    )
+for (button of btnType) {
+  let btnData = button.getAttribute("data-btn")
+  button.addEventListener('click', () => {
+    document.getElementById("list-poke").innerHTML = "";
+    filterPokeType(btnData)
   }
+  )
+}
 
 for (button of btnWeak) {
   let btnData = button.getAttribute("data-btn");
@@ -164,15 +167,16 @@ for (let btn of document.querySelectorAll('.icon-h-w')) {
 }
 
 
-stats.addEventListener("click", getTypes)
-stats.addEventListener("click", getHeight)
-stats.addEventListener("click", getWeight)
-stats.addEventListener("click", getCandy)
+stats.addEventListener("click", () =>
+getTypes(),
+getHeight(),
+getWeight(),
+getCandy())
 
 function getTypes() {
-  clearScreen('.list-poke');
-  document.getElementById("filter-buttons").innerHTML = ""
-  document.getElementById("show-poke").innerHTML = ""
+  clearScreen('.list-poke')
+  clearScreen('#filter-buttons')
+  clearScreen('#show-poke')
 
   let typesArray = [];
   let contNormal = 0;
@@ -276,23 +280,25 @@ function getTypes() {
         sourceColumn: 1,
         type: "string",
         role: "none"
-        },
+      },
       2]
     )
 
     var options = {
       title: "Tipos de Pokemons",
-      titleTextStyle: { fontSize: 20},
-      
+      titleTextStyle: { fontSize: 20 },
+
       width: 1000,
       height: 400,
       backgroundColor: "white",
       fontName: 'Signika',
       bar: { groupWidth: "80%" },
       legend: { position: "none" },
-      hAxis: { fontSize: 9,
-               slantedText: "true" }    
-          };
+      hAxis: {
+        fontSize: 9,
+        slantedText: "true"
+      }
+    };
 
     var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
     chart.draw(view, options);
@@ -366,21 +372,12 @@ function getCandy() {
   `
 }
 
-function hoverIcons(btnHover){
-
-for (button of btnHover) {
-  let btnData = button.getAttribute("data-btn")
+function hoverIcons(btnHover) {
+  for (button of btnHover) {
+    let btnData = button.getAttribute("data-btn")
     button.innerHTML +=
-    `       
+      `       
     <span class="btn-hover">${btnData}</span>
     `
-    }
-
   }
-
-  hoverIcons(btnType)
-  hoverIcons(btnWeak)
-
-
-        
-   
+}

@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="icons-style.css" />
   <link rel="stylesheet" href="stats-style.css" />
+  <link rel="stylesheet" href="modal.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
@@ -73,20 +74,17 @@
         <div class="div-mother-height">
           <h1 class="text-style">Altura</h1>
           <div class="icons-h-w">
-            <button class="icon-h-w" id="short"><i class="fas fa-arrow-up"></i> </button>
-            <button class="icon-h-w" id="medium"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i></button>
-            <button class="icon-h-w" id="tall"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i><i
-                class="fas fa-arrow-up"></i></button>
+            <button class="icon-h-w" id="short"><i class="fas fa-arrow-up"></i><span class="btn-hover">0 - 1m</span></button>
+            <button class="icon-h-w" id="medium"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"><span class="btn-hover">1m - 2m</span></i></button>
+            <button class="icon-h-w" id="tall"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i><span class="btn-hover">2m +</span></button>
           </div>
         </div>
         <div class="div-mother-weigth">
           <h1 class="text-style">Peso</h1>
           <div class="icons-h-w">
-            <button class="icon-h-w" id="light"><i class="fas fa-weight-hanging"></i></button>
-            <button class="icon-h-w" id="mid"><i class="fas fa-weight-hanging"></i><i
-                class="fas fa-weight-hanging"></i></button>
-            <button class="icon-h-w" id="heavy"><i class="fas fa-weight-hanging"></i><i
-                class="fas fa-weight-hanging"></i><i class="fas fa-weight-hanging"></i></button>
+            <button class="icon-h-w" id="light"><i class="fas fa-weight-hanging"></i><span class="btn-hover">0 - 45kg</span></button>
+            <button class="icon-h-w" id="mid"><i class="fas fa-weight-hanging"></i><i class="fas fa-weight-hanging"></i><span class="btn-hover">45kg - 90kg</span></button>
+            <button class="icon-h-w" id="heavy"><i class="fas fa-weight-hanging"></i><i class="fas fa-weight-hanging"></i><i class="fas fa-weight-hanging"></i><span class="btn-hover">90kg +</span></button>
           </div>
         </div>
       </section>
@@ -134,7 +132,7 @@
 
     <section id="charts" class="charts">
       <div class="chart-back">
-          <img src="../assets/images/picachu.png"  alt="picachugif" class="pika-img"/>
+          <img src="../assets/images/pikachu.png"  alt="picachugif" class="pika-img"/>
         <div id="columnchart_values" class="chart-types">
       </div>
     </div>
