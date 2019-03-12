@@ -309,17 +309,18 @@ for (button of btnWeak) {
     })
   }
   
-  // function innerPoke() {
-  //   pokemonDivFil.innerHTML += `
-  //   <div data-num=${elem.num} class="pokemon-unit">
-  //   <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
-  //     <div data-num=${elem.num} class= "poke-namenum">
-  //     <div class="poke-shadow"></div>
-  //       <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
-  //       <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
-  //     </div> 
-  //   </div>
-  // `}
+  function innerPoke(elem) {
+    return 
+  `
+    <div data-num=${elem.num} class="pokemon-unit">
+    <img data-num=${elem.num} class="poke-img" src="${elem.img}"/>
+      <div data-num=${elem.num} class= "poke-namenum">
+      <div class="poke-shadow"></div>
+        <p data-num=${elem.num} class="poke-num" > Nº ${elem.num}</p>
+        <h3 data-num=${elem.num} class="poke-name">${elem.name}</h3>
+      </div> 
+    </div>
+  `}
 
   var stats = document.getElementById("stats-btn")
   stats.addEventListener("click", getTypes)
