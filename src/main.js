@@ -4,7 +4,7 @@ window.onload = function () {
   showModal('.poke-namenum')
   hoverIcons(btnType)
   hoverIcons(btnWeak)
-  
+
 }
 
 const btnType = document.getElementsByClassName('btn-types');
@@ -166,21 +166,65 @@ for (let btn of document.querySelectorAll('.icon-h-w')) {
   )
 }
 
-stats.addEventListener("click", getTypes)
-stats.addEventListener("click", getHeight)
-stats.addEventListener("click", getWeight)
+document.getElementById("stats-btn").addEventListener("click", getStats)
 
-stats.addEventListener("click", getTypes)
+function getStats() {
 
-stats.addEventListener("click", getCandy)
-
-
-
-function getTypes() {
   clearScreen('.list-poke')
   clearScreen('#filter-buttons')
   clearScreen('#show-poke')
+  document.getElementById("filter-buttons").style.display = "none"
 
+  let chooseStats = document.getElementById("stats-menu")
+  chooseStats.innerHTML = `
+ 
+  <img src="../assets/images/pikachu.png"  alt="picachugif" class="pika-img"/>
+        <div class="stats-btn2">
+        <button id="type-chart">Tipos</button>
+        <button id="stats-h">Altura</button>
+        <button id="stats-w">Peso</button>
+        <button id="stats-c">Candy</button>
+        </div>
+   `
+   document.getElementById("type-chart").addEventListener("click", getTypes)
+   document.getElementById("stats-h").addEventListener("click", getHeight)
+   document.getElementById("stats-w").addEventListener("click", getWeight)
+   document.getElementById("stats-c").addEventListener("click", getCandy) 
+  }
+  function getTypes() {
+
+    clearScreen();
+    document.getElementById("filter-buttons").innerHTML = ""
+    document.getElementById("show-poke").innerHTML = ""
+
+    let typesArray = [];
+    let contNormal = 0;
+    let contFire = 0;
+    let contWater = 0;
+    let contElectric = 0;
+    let contGrass = 0;
+    let contIce = 0;
+    let contPoison = 0;
+    let contGround = 0;
+    let contFighting = 0;
+    let contFlying = 0;
+    let contPsychic = 0;
+    let contBug = 0;
+    let contRock = 0;
+    let contGhost = 0;
+    let contDragon = 0;
+    let contDark = 0;
+    let contSteel = 0;
+    let contFairy = 0;
+
+    getPokes.filter((elem) => {
+      typesArray.push(elem.type[0])
+      if (typeof elem.type[1] === "string") {
+        typesArray.push(elem.type[1])
+      }
+
+function getTypes() {
+ 
   let typesArray = [];
   let contNormal = 0;
   let contFire = 0;
@@ -291,7 +335,7 @@ function getTypes() {
       title: "Tipos de Pokemons",
       titleTextStyle: { fontSize: 20 },
 
-      width: 1000,
+      width: 900,
       height: 400,
       backgroundColor: "white",
       fontName: 'Signika',
@@ -303,7 +347,7 @@ function getTypes() {
       }
     };
 
-    var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+    var chart = new google.visualization.ColumnChart(document.getElementById("stats"));
     chart.draw(view, options);
   }
 }
@@ -319,7 +363,7 @@ function getHeight() {
   let maxHeight = Math.max.apply(null, heigthArray);
   let minHeight = Math.min.apply(null, heigthArray);
 
-  let pokeDivHeight = document.getElementById("height-stats")
+  let pokeDivHeight = document.getElementById("stats")
   pokeDivHeight.innerHTML = `
      <ul class= "hwc-stats">
        <p class="title-stats">ALTURA</p>
@@ -340,7 +384,7 @@ function getWeight() {
   let maxWeight = Math.max.apply(null, weightArray);
   let minWeight = Math.min.apply(null, weightArray);
 
-  let pokeDivWeight = document.getElementById("weight-stats")
+  let pokeDivWeight = document.getElementById("stats")
   pokeDivWeight.innerHTML = `
      <ul class= "hwc-stats">
        <p class="title-stats">PESO</p>
@@ -364,7 +408,7 @@ function getCandy() {
   let maxCandy = Math.max.apply(null, candyArray);
   let minCandy = Math.min.apply(null, candyArray);
 
-  let pokeDivCandy = document.getElementById("candy-stats")
+  let pokeDivCandy = document.getElementById("stats")
   pokeDivCandy.innerHTML = `
   <ul class= "hwc-stats">
     <p class="title-stats">CANDY</p>
