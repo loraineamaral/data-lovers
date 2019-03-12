@@ -87,11 +87,3 @@ function showModal(classPokes) {
 document.getElementById('close-sec').addEventListener('click', () =>
 	document.getElementById('sec-modal').style.display = "none"
 )
-
-function showCandy(poke){
-	`
-	<div class="div-arrow">
-	${poke.candy_count}
-	</div>
-	`
-}
