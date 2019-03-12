@@ -1,136 +1,177 @@
+.mother-types-weakness{
+  display: flex;
+  flex-direction: column;
+}
+.types-weakness{
+  max-width: 480px;
+  margin: 0 5%;
+}
 .btn-types{
   border: none;
   border-radius: 50%;
   width: 40px;
   padding: 8px 0px 8px 0px;
   font-size: 18px;
+  margin: 0.5%;
+  color: white;
 }
+
+.btn-types:hover {
+  background-color: white;
+  color: #666666;
+}
+
 .btn-weaks{
   border: none;
   border-radius: 50%;
   width: 40px;
   padding: 8px 0px 8px 0px;
   font-size: 18px;
+  margin: 0.5%;
+  color: white;
+}
+.btn-weaks:hover {
+  background-color: white;
+  color: #666666;
 }
 
-.btn-types:hover {
-  background-color: white;
-}
 button[data-btn="Normal"]{
-  background-color: white;
+  background-color: #A4ACAF;
 }
 button[data-btn="Fire"]{
-  background-color: red;
+  background-color: #FB7D33;
 }
 button[data-btn="Water"]{
-  background-color: #54e5ca;
+  background-color: #19A6F4;
 }
 button[data-btn="Electric"]{
-  background-color: #fca002;
+  background-color: #EDD346;
 }
 button[data-btn="Grass"]{
-  background-color: #01fc6a;
+  background-color: #9CCA58;
 }
 button[data-btn="Ice"]{
-  background-color: #4b8ab1;
+  background-color: #57C4E5;
 }
 button[data-btn="Poison"]{
-  background-color: #057731;
+  background-color: #B881C7;
 }
 button[data-btn="Ground"]{
-  background-color: #58392c;
+  background-color: #63491A;
 }
 button[data-btn="Fighting"]{
-  background-color:#c11313;
+  background-color:#CE5824;
 }
 button[data-btn="Flying"]{
-  background-color: #133ac6;
+  background-color: #AEEDFC;
 }
 button[data-btn="Psychic"]{
-  background-color: #d154e5;
+  background-color: #F169B8;
 }
 button[data-btn="Bug"]{
-  background-color: #b7e554;
+  background-color: #739E45;
 }
 button[data-btn="Rock"]{
-  background-color: #949989;
+  background-color: #5B563F;
 }
 button[data-btn="Ghost"]{
-  background-color: #c8abcc;
+  background-color: #674A9E;
 }
 button[data-btn="Dragon"]{
-  background-color: #f97b04;
+  background-color: #EF6F5C;
 }
 button[data-btn="Dark"]{
-  background-color: #14729e;
+  background-color: #484849;
 }
 button[data-btn="Steel"]{
-  background-color: #8989a3;
+  background-color: #90AFAF;
 }
 button[data-btn="Fairy"]{
-  background-color: deeppink;
-}
-button[data-btn="NormalW"]{
-  background-color: white;
-}
-button[data-btn="FireW"]{
-  background-color: red;
-}
-button[data-btn="WaterW"]{
-  background-color: #54e5ca;
-}
-button[data-btn="ElectricW"]{
-  background-color: #fca002;
-}
-button[data-btn="GrassW"]{
-  background-color: #01fc6a;
-}
-button[data-btn="IceW"]{
-  background-color: #4b8ab1;
-}
-button[data-btn="PoisonW"]{
-  background-color: #057731;
-}
-button[data-btn="GroundW"]{
-  background-color: #58392c;
-}
-button[data-btn="FightingW"]{
-  background-color:#c11313;
-}
-button[data-btn="FlyingW"]{
-  background-color: #133ac6;
-}
-button[data-btn="PsychicW"]{
-  background-color: #d154e5;
-}
-button[data-btn="BugW"]{
-  background-color: #b7e554;
-}
-button[data-btn="RockW"]{
-  background-color: #949989;
-}
-button[data-btn="GhostW"]{
-  background-color: #c8abcc;
-}
-button[data-btn="DragonW"]{
-  background-color: #f97b04;
-}
-button[data-btn="DarkW"]{
-  background-color: #14729e;
- 
-}
-button[data-btn="SteelW"]{
-  background-color: #8989a3;
-}
-button[data-btn="FairyW"]{
-  background-color: deeppink;
-}
-.icon-h-w{
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  padding: 15px 10px 15px 10px;
-  font-size: 15px;
-  background-color: #ede971;
+  background-color: #FCBAE8;
 }
 
+.height-weigth{
+  display: flex;
+  flex-direction: column;
+  margin: 0 5%;
+}
+
+.icons-h-w{
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.icon-h-w{
+  border: none;
+  border-radius: 30%;
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  font-size: 15px;
+  margin: 1%;
+  background-color: #EDDE20;
+  color: white;
+}
+.icon-h-w:hover{
+  background-color: #ede971;
+  color: #666666;
+}
+.icon-h-w .btn-hover{
+  visibility: hidden;
+  width: 80px;
+  background-color: #EFEFEF;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 0;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -40px;
+}
+
+.icon-h-w:hover .btn-hover {
+  visibility: visible;
+}
+
+button .btn-hover{
+  visibility: hidden;
+  width: 80px;
+  background-color: #EFEFEF;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 2;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -40px;
+  font-family: "Signika";
+}
+
+.btn-hover{
+  font-family: 'Signika', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  z-index: 0;
+}
+
+.btn-hover::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:#EFEFEF transparent transparent transparent;
+  z-index: 0;
+}
+
+button:hover .btn-hover {
+  visibility: visible;
+  z-index: 0;
+}

@@ -43,14 +43,7 @@ function showModal(classPokes) {
 						elem.prev_evolution.filter((evol) => {
 							getPokes.filter((element) => {
 								if (evol.num === element.num) {
-									document.querySelector('.sec-evol').innerHTML += 
-									`
-									${pokeUnit(element)}
-									<div class="arrow">
-									<div class="bubbly">${element.candy_count}</div>
-									<i class="fas fa-arrow-right"></i>
-									</div>
-									`
+									document.querySelector('.sec-evol').innerHTML += pokeUnit(element)
 								}
 							}
 							)
@@ -88,11 +81,3 @@ function showModal(classPokes) {
 document.getElementById('close-sec').addEventListener('click', () =>
 	document.getElementById('sec-modal').style.display = "none"
 )
-
-function showCandy(poke){
-	`
-	<div class="div-arrow">
-	${poke.candy_count}
-	</div>
-	`
-}
