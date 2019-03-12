@@ -50,7 +50,8 @@ function showModal(classPokes) {
 									`
 									${pokeUnit(element)}
 									<div class="arrow">
-									<div class="candyCount">${element.candy_count} ${element.candy}</div>
+									<div class="candyCount">${element.candy_count}</div>
+									<div class="candyPoke">${element.candy}</div>
 									<i class="fas fa-arrow-right"></i>
 									</div>`
 								}
@@ -69,7 +70,8 @@ function showModal(classPokes) {
 									document.querySelector('.sec-evol').innerHTML += 
 									`
 									<div class="arrow">
-									<div class="candyCount">${elem.candy_count} ${element.candy}</div>
+									<div class="candyCount">${elem.candy_count}</div>
+									<div class="candyPoke">${element.candy}</div>
 									<i class="fas fa-arrow-right"></i></div>
 									${pokeUnit(element)}
 									`

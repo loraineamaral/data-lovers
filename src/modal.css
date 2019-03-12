@@ -154,9 +154,10 @@
   .arrow{
     display: flex;
     flex-direction: column;
+    font-family: 'Signika', sans-serif;
   }
-  .bubbly{
-
+  .candyPoke{
+    font-size: 10px;
   }
   .close{
     text-align: end;

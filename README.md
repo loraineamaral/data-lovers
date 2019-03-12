@@ -1,41 +1,38 @@
 # Data Lovers
 
-
 ## Objetivo do projeto
 
-Neste projeto será desenvolvida uma página web para visualizar um conjunto de dados 
-voltados para as necessidades do um usuário.
-Neste caso, será usado um set de dados do jogo Pokemon Go, com uma lista dos 151 
-Pokémons da região de Kanto e estatísticas dos mesmos.
+Foi desenvolvida uma página web para visualizar um conjunto de dados voltados para as necessidades dos jogadores de PokemonGo.
+Neste caso, será usado um set de dados do jogo Pokemon Go, com uma lista dos 151 Pokémons da região de Kanto e estatísticas dos mesmos.
 
-Como produto final,será entregue uma página web na qual o usuário possa visualizar 
-os dados, filtrá-los, ordená-los e acessar estatísticas relevantes.
+Como produto final,foi entregue uma página web na qual o usuário possa visualizar estatísticas e dados, filtrá-los e ordená-los.
 
 ### Definição do produto
 
-<!-- Documente brevemente seu trabalho no arquivo `README.md` de seu repositório,
-nos contando como foi seu processo de desenvolvimento do projeto e como
-acredita que seu produto resolve o problema (os problemas) do seu usuário. -->
+O produto final é uma Wiki dos 151 pokemons da região de Kanto com características relevantes para os curiosos e jogadores de PokemonGO.
 
 ###Definição da Persona
 <!-- persona -->
+#### Processo
+O programa apresenta uma lista de pokemons que pode ser filtrada através do tipo, fraquezas, altura, peso e também ordenada em ordem alfabetica crescente e decrescente. As informações são obtidas de um banco de dados em .js e trabalhadas principalmente através dos métodos map, filter e sort.
 
 #### Protótipo
 
 Primeiramente foram desenvolvidos protótipos simples em papel. 
-Abaixo estão os protótipos de uma possível página principal e modal 
-que traz informações específicas sobre cada Pokémon.
+Abaixo estão os protótipos de uma possível página principal e modal com informações específicas sobre cada Pokémon.
 
 ![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/Prot%C3%B3tipo-papel-1.png)
 
-Depois, foi também desenvolvido um protótipo de média fidelidade usando o Marvel:
+Escolhido o escopo, foi desenvolvido um protótipo de média fidelidade usando o Marvel:
 https://marvelapp.com/6c733if
 
 #### Testes de usabilidade
 
-<!-- Durante o desafio você deverá realizar testes de usabilidade com diversos
-usuários. Com base nos resultados dos testes, você deverá reorganizar seu
-protótipo. Documente as diversas iterações para ter ideia da evolução e para
-conseguir resgatar ideias mais tarde. -->
+Através dos resultados dos testes de usabilidade, foi realizada:
+* Inclusão de toolkits com os nomes dos botões de tipos e fraquezas para facilitar a identificação, além dos ícones e cores já definidos.
+![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/teste1.jpg)
+![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/teste3.jpg)
+![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/teste4.jpg)
 
-
+* Análise e apresentação de dados em gráficos.
+![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/teste2.jpg)
