@@ -192,6 +192,38 @@ function getStats() {
    document.getElementById("stats-c").addEventListener("click", getCandy) 
   }
 
+  function getTypes() {
+
+    clearScreen();
+    document.getElementById("filter-buttons").innerHTML = ""
+    document.getElementById("show-poke").innerHTML = ""
+
+    let typesArray = [];
+    let contNormal = 0;
+    let contFire = 0;
+    let contWater = 0;
+    let contElectric = 0;
+    let contGrass = 0;
+    let contIce = 0;
+    let contPoison = 0;
+    let contGround = 0;
+    let contFighting = 0;
+    let contFlying = 0;
+    let contPsychic = 0;
+    let contBug = 0;
+    let contRock = 0;
+    let contGhost = 0;
+    let contDragon = 0;
+    let contDark = 0;
+    let contSteel = 0;
+    let contFairy = 0;
+
+    getPokes.filter((elem) => {
+      typesArray.push(elem.type[0])
+      if (typeof elem.type[1] === "string") {
+        typesArray.push(elem.type[1])
+      }
+
 function getTypes() {
  
   let typesArray = [];

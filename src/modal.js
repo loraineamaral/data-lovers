@@ -48,13 +48,22 @@ function showModal(classPokes) {
 							}
 							)
 						}
-						),
+						)
 							document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
-					} if (elem.hasOwnProperty('next_evolution') === true) {
+					} else if(elem.hasOwnProperty('prev_evolution') === false){
+						document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
+					} 
+					if (elem.hasOwnProperty('next_evolution') === true) {
 						elem.next_evolution.filter((evol) => {
-							getPokes.filter((elem) => {
-								if (evol.num === elem.num) {
-									document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
+							getPokes.filter((element) => {
+								if (evol.num === element.num) {
+									document.querySelector('.sec-evol').innerHTML += 
+									`
+									<div class="arrow">
+									<div class="bubbly">${elem.candy_count}</div>
+									<i class="fas fa-arrow-right"></i></div>
+									${pokeUnit(element)}
+									`
 								}
 							}
 							)
