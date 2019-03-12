@@ -24,13 +24,18 @@
   .modal-content{
     background-color: white;
     padding: 10%;
-    width: 60%;
-    padding: 20px;
+    width: 50%;
+    padding: 20px 100px;
   }
   .title-name{
     font-family: 'Signika', sans-serif;
-    font-size: 40px;
-  }
+    text-align: center;
+  font-size: 50px;
+  margin: 10px;
+  padding: 10px 0;
+  background-color: #e5e4d0;
+  border-radius: 10px;
+}
   .subtitles{
     font-family: 'Signika', sans-serif;
     font-size: 20px;
@@ -40,7 +45,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
   }
   #photo-poke{
     display: flex;
@@ -50,9 +56,8 @@
     background-size: cover;
     border-radius: 10px;
     width: 300px;
-    height: inherit;
-    margin: 10px;
-    padding: 10px 0 0 0;
+    height: 310px;
+    margin: 0;
   }
   #photo-poke img{
     width: inherit;
@@ -68,7 +73,6 @@
     border-radius: 10px;
     width: 300px;
     margin: 0px;
-    padding: 10px 0 10px 0;
   }
   .types-weak .poke-img{
     display: flex;
@@ -92,10 +96,15 @@
     background-color: beige;
     border-radius: 10px;
     width: 260px;
-    margin: 0px;
+    margin: 10px 0 0 0;
     padding: 10px 0 10px 40px;
   }
-
+  .div-type{
+    height: 70px;
+  }
+  .div-weak{
+    height: 70px;
+  }
   .subtitlesM{
     font-family: 'Signika', sans-serif;
     font-size: 20px;
@@ -105,17 +114,19 @@
 
   .mother-evol{
     display: flex;
-    flex-direction: row;
+    width: 620px;
+    border-radius: 10px;
+    background-color: beige;
+    margin: 10px;
   }
 
   .sec-evol{
-    display: flex;
-    flex-direction: row;
+    width: inherit;
+    display: inline-flex;
     text-align: center;
-    background-color: beige;
-    border-radius: 10px;
-    width: 260px;
-    margin: 10px;
+    justify-content: space-evenly;
+    margin: 0 0 10px;
+    align-items: center;
   }
 
   .sec-evol .pokemon-unit{
@@ -136,9 +147,19 @@
     padding: 0;
   }
 
+  .sec-evol i{
+    font-size: 40px;
+    color: #333333;
+  }
+  .arrow{
+    display: flex;
+    flex-direction: column;
+  }
+  .bubbly{
+
+  }
   .close{
     text-align: end;
     font-family: 'Signika', sans-serif;
     font-size: 30px;
-    margin: 0 5% 0 0;
   }

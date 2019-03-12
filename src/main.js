@@ -12,7 +12,7 @@ const pokemonDivFil = document.getElementById("list-poke");
 const getPokes = POKEMON.pokemon;
 const selectOpt = document.querySelector("select");
 const btnWeak = document.getElementsByClassName('btn-weaks');
-
+const stats = document.getElementById("stats-btn")
 
 selectOpt.addEventListener("change", () =>
   sortPoke(selectOpt.selectedIndex));
@@ -191,7 +191,6 @@ function getStats() {
    document.getElementById("stats-w").addEventListener("click", getWeight)
    document.getElementById("stats-c").addEventListener("click", getCandy) 
   }
-
   function getTypes() {
 
     clearScreen();

@@ -43,7 +43,13 @@ function showModal(classPokes) {
 						elem.prev_evolution.filter((evol) => {
 							getPokes.filter((element) => {
 								if (evol.num === element.num) {
-									document.querySelector('.sec-evol').innerHTML += pokeUnit(element)
+									document.querySelector('.sec-evol').innerHTML += 
+									`
+									${pokeUnit(element)}
+									<div class="arrow">
+									<div class="bubbly">${element.candy_count}</div>
+									<i class="fas fa-arrow-right"></i>
+									</div>`
 								}
 							}
 							)
