@@ -125,7 +125,8 @@
     display: inline-flex;
     text-align: center;
     justify-content: space-evenly;
-    margin: 0 0 10px
+    margin: 0 0 10px;
+    align-items: center;
   }
 
   .sec-evol .pokemon-unit{
@@ -145,11 +146,17 @@
     margin: 0;
     padding: 0;
   }
-  .div-arrow::before{
-    content: url(../assets/images/arrow.png);
-    position: absolute;
-    top: 1.3em;
-    left: 0.6em;
+
+  .sec-evol i{
+    font-size: 40px;
+    color: #333333;
+  }
+  .arrow{
+    display: flex;
+    flex-direction: column;
+  }
+  .bubbly{
+
   }
   .close{
     text-align: end;

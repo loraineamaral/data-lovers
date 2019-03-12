@@ -43,18 +43,33 @@ function showModal(classPokes) {
 						elem.prev_evolution.filter((evol) => {
 							getPokes.filter((element) => {
 								if (evol.num === element.num) {
-									document.querySelector('.sec-evol').innerHTML += `${pokeUnit(element)}<i class="fas fa-arrow-alt-circle-left"></i>`
+									document.querySelector('.sec-evol').innerHTML += 
+									`
+									${pokeUnit(element)}
+									<div class="arrow">
+									<div class="bubbly">${element.candy_count}</div>
+									<i class="fas fa-arrow-right"></i>
+									</div>`
 								}
 							}
 							)
 						}
-						),
+						)
 							document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
-					} if (elem.hasOwnProperty('next_evolution') === true) {
+					} else if(elem.hasOwnProperty('prev_evolution') === false){
+						document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
+					} 
+					if (elem.hasOwnProperty('next_evolution') === true) {
 						elem.next_evolution.filter((evol) => {
 							getPokes.filter((element) => {
 								if (evol.num === element.num) {
-									document.querySelector('.sec-evol').innerHTML += `<i class="fas fa-arrow-alt-circle-right"></i> ${pokeUnit(elem)} `
+									document.querySelector('.sec-evol').innerHTML += 
+									`
+									<div class="arrow">
+									<div class="bubbly">${elem.candy_count}</div>
+									<i class="fas fa-arrow-right"></i></div>
+									${pokeUnit(element)}
+									`
 								}
 							}
 							)
