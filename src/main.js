@@ -4,6 +4,7 @@ window.onload = function () {
   showModal('.poke-namenum')
   hoverIcons(btnType)
   hoverIcons(btnWeak)
+  document.getElementById("filter-buttons").style.display = "none"
 }
 
 const btnType = document.getElementsByClassName('btn-types');
@@ -12,6 +13,37 @@ const getPokes = POKEMON.pokemon;
 const selectOpt = document.querySelector("select");
 const btnWeak = document.getElementsByClassName('btn-weaks');
 const stats = document.getElementById("stats-btn")
+
+document.getElementById("home-btn").addEventListener("click", reloadBtn)
+
+function reloadBtn (){
+  document.location.reload(true)
+}
+
+document.getElementById("search-show").addEventListener("click", searchAd)
+
+function searchAd (){
+
+    var display = document.getElementById("filter-buttons").style.display;
+    if(display == "none"){
+        document.getElementById("filter-buttons").style.display = 'flex';
+    }else{
+        document.getElementById("filter-buttons").style.display = 'none';
+    }
+}
+
+document.getElementById("go-btn").addEventListener("click", searchPoke)
+
+function searchPoke(){
+
+  let searchName = document.getElementById("search-poke").value
+  getPokes.filter((elem) => {
+      if (searchName === elem.name) {
+        pokemonDivFil.innerHTML = pokeUnit(elem);  
+      }
+    }
+    )
+  }
 
 selectOpt.addEventListener("change", () =>
   sortPoke(selectOpt.selectedIndex));
@@ -168,8 +200,8 @@ function getStats() {
 
   clearScreen('.list-poke')
   clearScreen('#filter-buttons')
-  clearScreen('#show-poke')
   document.getElementById("filter-buttons").style.display = "none"
+  document.getElementById("show-menubar").style.display = "none"
 
   let chooseStats = document.getElementById("stats-menu")
   chooseStats.innerHTML = `
@@ -298,16 +330,18 @@ function getTypes() {
     var options = {
       title: "Tipos de Pokemons",
       titleTextStyle: { fontSize: 20 },
-
-      width: 900,
+      width: 800,
       height: 400,
       backgroundColor: "white",
       fontName: 'Signika',
-      bar: { groupWidth: "80%" },
+      bar: { groupWidth: "90%" },
       legend: { position: "none" },
       hAxis: {
         fontSize: 9,
         slantedText: "true"
+      },
+      chartArea:{
+        width: 700,
       }
     };
 

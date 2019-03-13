@@ -13,7 +13,7 @@ O produto final é uma Wiki dos 151 pokemons da região de Kanto com caracterís
 
 ### Definição da Persona
 
-<!-- persona -->
+![data-lovers](https://github.com/loraineamaral/data-lovers/blob/master/assets/personaPrancheta%201.png)
 
 ### Processo
 O programa apresenta uma lista de pokemons que pode ser filtrada através do tipo, fraquezas, altura, peso e também ordenada em ordem alfabetica crescente e decrescente. As informações são obtidas de um banco de dados em .js e trabalhadas principalmente através dos métodos map, filter e sort.

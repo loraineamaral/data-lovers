@@ -98,7 +98,15 @@
         </div>
       </section>
     </section>
-    <section class="show-poke" id="show-poke">
+    <section id="show-menubar" class="show-menubar">
+      <div class="input-search">
+          <input type="text" id="search-poke" class="search-poke"placeholder="Nome do Pokémon" value="">
+          <button class= "go-btn" id="go-btn"><i class="fas fa-search"></i></button>
+        </div>
+    <div class="show-filter" id="show-filter">
+      <div class="show-hide">
+        <button id="search-show" class="search-btn">Pesquisa Avançada<i class="fas fa-arrow-down"></i></button>
+      </div>
       <div class="order-menu">
         <select class="menu-select" id="ordering-poke" name="order-names">
           <option>Ordenar:</option>
@@ -106,8 +114,9 @@
           <option id="reversealphab">Z-A</option>
         </select>
       </div>
+    </div>
+  </section>
       <div class="list-poke" id="list-poke"></div>
-    </section>
     <section id="sec-modal" class="sec-modal">
       <div class="div-modal">
         <section id="modal-content" class="modal-content">
