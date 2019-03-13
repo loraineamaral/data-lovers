@@ -11,12 +11,12 @@ function showModal(classPokes) {
 				if (dataNum === elem.num) {
 					document.querySelector('#sec-modal').style.display = "block";
 					document.querySelector('.title-name').innerHTML = elem.name;
-					document.querySelector('#photo-poke').innerHTML = 
-					`
+					document.querySelector('#photo-poke').innerHTML =
+						`
           <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${elem.num}.png"/>
           `
-					document.querySelector('.poke-description').innerHTML = 
-					`
+					document.querySelector('.poke-description').innerHTML =
+						`
           <ul>
           <li>N° ${elem.num}</li>
           <li>Altura: ${elem.height}</li>
@@ -46,8 +46,8 @@ function showModal(classPokes) {
 						elem.prev_evolution.filter((evol) => {
 							getPokes.filter((element) => {
 								if (evol.num === element.num) {
-									document.querySelector('.sec-evol').innerHTML += 
-									`
+									document.querySelector('.sec-evol').innerHTML +=
+										`
 									${pokeUnit(element)}
 									<div class="arrow">
 									<div class="candyCount">${element.candy_count}</div>
@@ -59,16 +59,16 @@ function showModal(classPokes) {
 							)
 						}
 						)
-							document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
-					} else if(elem.hasOwnProperty('prev_evolution') === false){
 						document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
-					} 
+					} else if (elem.hasOwnProperty('prev_evolution') === false) {
+						document.querySelector('.sec-evol').innerHTML += pokeUnit(elem)
+					}
 					if (elem.hasOwnProperty('next_evolution') === true) {
 						elem.next_evolution.filter((evol) => {
 							getPokes.filter((element) => {
 								if (evol.num === element.num) {
-									document.querySelector('.sec-evol').innerHTML += 
-									`
+									document.querySelector('.sec-evol').innerHTML +=
+										`
 									<div class="arrow">
 									<div class="candyCount">${elem.candy_count}</div>
 									<div class="candyPoke">${element.candy}</div>

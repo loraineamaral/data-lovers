@@ -15,35 +15,32 @@ const btnWeak = document.getElementsByClassName('btn-weaks');
 const stats = document.getElementById("stats-btn")
 
 document.getElementById("home-btn").addEventListener("click", reloadBtn)
+document.getElementById("search-show").addEventListener("click", searchAd)
+document.getElementById("go-btn").addEventListener("click", searchPoke)
+document.getElementById("stats-btn").addEventListener("click", getStats)
 
-function reloadBtn (){
+function reloadBtn() {
   document.location.reload(true)
 }
 
-document.getElementById("search-show").addEventListener("click", searchAd)
-
-function searchAd (){
-
-    var display = document.getElementById("filter-buttons").style.display;
-    if(display == "none"){
-        document.getElementById("filter-buttons").style.display = 'flex';
-    }else{
-        document.getElementById("filter-buttons").style.display = 'none';
-    }
+function searchAd() {
+  let displayDiv = document.getElementById("filter-buttons").style.display;
+  if (displayDiv == "none") {
+    document.getElementById("filter-buttons").style.display = 'flex';
+  } else {
+    document.getElementById("filter-buttons").style.display = 'none';
+  }
 }
 
-document.getElementById("go-btn").addEventListener("click", searchPoke)
-
-function searchPoke(){
-
+function searchPoke() {
   let searchName = document.getElementById("search-poke").value
   getPokes.filter((elem) => {
-      if (searchName === elem.name) {
-        pokemonDivFil.innerHTML = pokeUnit(elem);  
-      }
+    if (searchName === elem.name) {
+      pokemonDivFil.innerHTML = pokeUnit(elem);
     }
-    )
   }
+  )
+}
 
 selectOpt.addEventListener("change", () =>
   sortPoke(selectOpt.selectedIndex));
@@ -194,10 +191,7 @@ for (let btn of document.querySelectorAll('.icon-h-w')) {
   )
 }
 
-document.getElementById("stats-btn").addEventListener("click", getStats)
-
 function getStats() {
-
   clearScreen('.list-poke')
   clearScreen('#filter-buttons')
   document.getElementById("filter-buttons").style.display = "none"
@@ -213,14 +207,13 @@ function getStats() {
         <button id="stats-c">Candy</button>
         </div>
    `
-   document.getElementById("type-chart").addEventListener("click", getTypes)
-   document.getElementById("stats-h").addEventListener("click", getHeight)
-   document.getElementById("stats-w").addEventListener("click", getWeight)
-   document.getElementById("stats-c").addEventListener("click", getCandy) 
-  }
+  document.getElementById("type-chart").addEventListener("click", getTypes)
+  document.getElementById("stats-h").addEventListener("click", getHeight)
+  document.getElementById("stats-w").addEventListener("click", getWeight)
+  document.getElementById("stats-c").addEventListener("click", getCandy)
+}
 
 function getTypes() {
- 
   let typesArray = [];
   let contNormal = 0;
   let contFire = 0;
@@ -248,7 +241,7 @@ function getTypes() {
     }
   }
   )
-  
+
   typesArray.filter((elem) => {
     if (elem === "Normal") {
       contNormal += 1;
@@ -316,7 +309,7 @@ function getTypes() {
     ]
     );
 
-    var view = new google.visualization.DataView(data);
+    let view = new google.visualization.DataView(data);
     view.setColumns([0, 1,
       {
         calc: "stringify",
@@ -327,7 +320,7 @@ function getTypes() {
       2]
     )
 
-    var options = {
+    let options = {
       title: "Tipos de Pokemons",
       titleTextStyle: { fontSize: 20 },
       width: 800,
@@ -340,12 +333,12 @@ function getTypes() {
         fontSize: 9,
         slantedText: "true"
       },
-      chartArea:{
+      chartArea: {
         width: 700,
       }
     };
 
-    var chart = new google.visualization.ColumnChart(document.getElementById("stats"));
+    let chart = new google.visualization.ColumnChart(document.getElementById("stats"));
     chart.draw(view, options);
   }
 }

@@ -1,4 +1,3 @@
-
 body{
   margin: 0;
   padding: 0;
@@ -55,32 +54,26 @@ ul{
  .types-weakness{
   width: 70%; 
 }
-
 .height-weigth{
    width: 30%;
 }
-
 .show-menubar{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 140px 50px 0 50px;
-  
 }
-
 .search-poke{
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
 }
-
 .go-btn{
   border: 1px solid yellow;
   background-color: yellow;
   padding: 10px;
   border-radius: 100%;
 }
-
 .search-btn{
   border: 1px solid black;
   background-color: white;
@@ -90,11 +83,9 @@ ul{
   padding: 8px;
   margin-bottom: 10px;
 }
-
 .search-btn i{
   padding-left: 10px;
 }
-
 .menu-select{
   font-family: 'Signika', sans-serif;
   font-size: 15px;
@@ -111,7 +102,6 @@ ul{
   width: 200px;
   height: 30px;
 }
-
 .list-poke{
   display: flex;
   flex-direction: row;
@@ -146,7 +136,6 @@ ul{
   margin-bottom: 10px;
   margin-left: 20px; 
  }
-
 .sec-modal{
   display: none;
 }
@@ -161,14 +150,12 @@ ul{
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
 }
-
 .poke-num{
   font-family: 'Signika', sans-serif;
   font-size: 13px;
   margin: 0;
   color: #333333;
 }
-
 .text-style{
   font-family: 'Signika', sans-serif;
   font-size: 20px;
