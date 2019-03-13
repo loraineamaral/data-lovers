@@ -3,12 +3,7 @@ body{
   padding: 0;
   background: url(../assets/images/whiteandgrey.png);
 }
-ul{
-  list-style: none;
-  font-family: 'Signika', sans-serif;
-  font-size: 20px;
-}
-.black-bar{
+   .black-bar{
   background-color: #08224E;
   height: 100px;
   width: 100%;
@@ -18,16 +13,16 @@ ul{
   position: fixed;
   padding: 1% 0;
   z-index: 1;
- }
- .home-btn{
-   background-color: #08224E;
-   border-radius: 15px;
-   border: 2px solid yellow;
-   font-family: 'Signika', sans-serif;
-   font-size: 20px;
-   padding: 10px 0;
-   width: 150px;
-   color: white;
+   }
+    .home-btn{
+     background-color: #08224E;
+     border-radius: 15px;
+     border: 2px solid yellow;
+     font-family: 'Signika', sans-serif;
+     font-size: 20px;
+     padding: 10px 0;
+     width: 150px;
+     color: white;
  }
 .stats-btn{
    background-color: #08224E;

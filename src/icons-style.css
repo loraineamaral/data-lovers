@@ -121,9 +121,7 @@ button[data-btn="Fairy"]{
   padding: 5px 0;
   position: absolute;
   z-index: 0;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -40px;
+  margin: -70px;
 }
 .icon-h-w:hover .btn-hover {
   visibility: visible;
@@ -138,9 +136,7 @@ button .btn-hover{
   padding: 5px 0;
   position: absolute;
   z-index: 2;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -40px;
+  margin: -50px;
   font-family: "Signika";
 }
 .btn-hover{
